@@ -1,6 +1,6 @@
-var http = require('http');
+import { createServer } from 'http';
 
-http.createServer(function(req, res){
+createServer(function(req, res){
   // res.end("eu amo abacate, me faz feliz");
   import Deck from './deck.js'
 
