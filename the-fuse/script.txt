@@ -1,9 +1,5 @@
-var http = require('http');
-
-http.createServer(function(req, res){
-  // res.end("eu amo abacate, me faz feliz");
-  import Deck from './deck.js'
-
+// import Deck from "./deck.js"
+import Deck from "deck.js"
 
   const CARD_VALUE_MAP = {
     "2": 2,
@@ -111,5 +107,3 @@ http.createServer(function(req, res){
   function isGameOver(deck) {
     return deck.numberOfCards === 0
   }
-}).listen(8080);
-
