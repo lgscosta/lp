@@ -1,8 +1,8 @@
 # The Fuse - Card Game
 ## Código implementado por:
-    - Eduardo Afonso
-    - Luana Costa
-    - Mateus Couto
+    Eduardo Afonso
+    Luana Costa
+    Mateus Couto
 ## Ciência da Computação
 
 # Como rodar o servidor
@@ -11,6 +11,7 @@ O programa está sendo testado dentro do caminho:
 
 Quando for executada em outra máquina, deletar o diretório
 > node_modules
+
 e rodar o comando:
 ```npm install```
 
