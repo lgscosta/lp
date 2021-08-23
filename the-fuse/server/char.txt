@@ -1,0 +1,239 @@
+// // 1
+// const mother = struct({
+//     tag: 'The Mother',
+//     attribute1: 65,
+//     attribute2: 20,
+//     attribute3: 100,
+//     attribute4: 85,
+//     exceptions: [18],
+// })
+
+// // 2
+// const noise = struct({
+//     tag: 'The Noise',
+//     attribute1: 50,
+//     attribute2: 60,
+//     attribute3: 10,
+//     attribute4: 45,
+//     exceptions: [3,12,20],
+// })
+
+// // 3
+// const surfer = struct({
+//     tag: 'The Surfer',
+//     attribute1: 40,
+//     attribute2: 60,
+//     attribute3: 15,
+//     attribute4: 90,
+//     exceptions: [3,17,20],
+// })
+
+// // 4
+// const dancer = struct({
+//     tag: 'The Dancer',
+//     attribute1: 75,
+//     attribute2: 40,
+//     attribute3: 60,
+//     attribute4: 75,
+//     exceptions: [3,20],
+// })
+
+// // 5
+// const optimizer = struct({
+//     tag: 'The Optimizer',
+//     attribute1: 80,
+//     attribute2: 90,
+//     attribute3: 80,
+//     attribute4: 70,
+//     exceptions: [],
+// })
+
+// // 6
+// const rookie = struct({
+//     tag: 'The Rookie',
+//     attribute1: 50,
+//     attribute2: 100,
+//     attribute3: 70,
+//     attribute4: 80,
+//     exceptions: [],
+// })
+
+// // 7
+// const whisper = struct({
+//     tag: 'The Whisper',
+//     attribute1: 60,
+//     attribute2: 80,
+//     attribute3: 90,
+//     attribute4: 45,
+//     exceptions: [9],
+// })
+
+// // 8
+// const transformer = struct({
+//     tag: 'The Transformer',
+//     attribute1: 80,
+//     attribute2: 70,
+//     attribute3: 90,
+//     attribute4: 50,
+//     exceptions: [8,19],
+// })
+
+// // 9
+// const intruder = struct({
+//     tag: 'The Intruder',
+//     attribute1: 80,
+//     attribute2: 70,
+//     attribute3: 70,
+//     attribute4: 40,
+//     exceptions: [12,18],
+// })
+
+// // 10
+// const oracle = struct({
+//     tag: 'The Oracle',
+//     attribute1: 60,
+//     attribute2: 95,
+//     attribute3: 100,
+//     attribute4: 70,
+//     exceptions: [9],
+// })
+
+// // 11
+// const witcher = struct({
+//     tag: 'The Witcher',
+//     attribute1: 85,
+//     attribute2: 75,
+//     attribute3: 100,
+//     attribute4: 65,
+//     exceptions: [10],
+// })
+
+// // 12
+// const hunter = struct({
+//     tag: 'The Hunter',
+//     attribute1: 60,
+//     attribute2: 30,
+//     attribute3: 30,
+//     attribute4: 70,
+//     exceptions: [4],
+// })
+
+// // 13
+// const boss = struct({
+//     tag: 'The Boss',
+//     attribute1: 75,
+//     attribute2: 70,
+//     attribute3: 50,
+//     attribute4: 40,
+//     exceptions: [3],
+// })
+
+// // 14
+// const aunt = struct({
+//     tag: 'The Aunt',
+//     attribute1: 60,
+//     attribute2: 70,
+//     attribute3: 95,
+//     attribute4: 85,
+//     exceptions: [1],
+// })
+
+// // 15
+// const poisson = struct({
+//     tag: 'The Poisson',
+//     attribute1: 80,
+//     attribute2: 35,
+//     attribute3: 65,
+//     attribute4: 80,
+//     exceptions: [],
+// })
+
+// // 16
+// const who = struct({
+//     tag: 'The WHO',
+//     attribute1: 50,
+//     attribute2: 50,
+//     attribute3: 50,
+//     attribute4: 50,
+//     exceptions: [22,23],
+// })
+
+// // 17
+// const ruler = struct({
+//     tag: 'The Ruler',
+//     attribute1: 45,
+//     attribute2: 35,
+//     attribute3: 75,
+//     attribute4: 90,
+//     exceptions: [],
+// })
+
+// // 18
+// const vm = struct({
+//     tag: 'The Virtual Machine',
+//     attribute1: 85,
+//     attribute2: 70,
+//     attribute3: 75,
+//     attribute4: 75,
+//     exceptions: [],
+// })
+
+// // 19
+// const st = struct({
+//     tag: 'The Silk Touch',
+//     attribute1: 40,
+//     attribute2: 70,
+//     attribute3: 60,
+//     attribute4: 50,
+//     exceptions: [1],
+// })
+
+// // 20
+// const preppy = struct({
+//     tag: 'The Preppy',
+//     attribute1: 75,
+//     attribute2: 70,
+//     attribute3: 65,
+//     attribute4: 85,
+//     exceptions: [],
+// })
+
+// // 21
+// const runaway = struct({
+//     tag: 'The Runaway',
+//     attribute1: 85,
+//     attribute2: 35,
+//     attribute3: 90,
+//     attribute4: 80,
+//     exceptions: [3],
+// })
+
+// // 22
+// const siren = struct({
+//     tag: 'The Siren',
+//     attribute1: 100,
+//     attribute2: 60,
+//     attribute3: 80,
+//     attribute4: 70,
+//     exceptions: [2,5,8,12,15,18,22],
+// })
+
+// // 23
+// const guardian = struct({
+//     tag: 'The Guardian',
+//     attribute1: 70,
+//     attribute2: 95,
+//     attribute3: 65,
+//     attribute4: 80,
+//     exceptions: [2,5,6,8,9,12,15,18,22],
+// })
+
+// // 24
+// const sadboy = struct({
+//     tag: 'The SadBoy',
+//     attribute1: 70,
+//     attribute2: 70,
+//     attribute3: 90,
+//     attribute4: 50,
+//     exceptions: [5,6,12,15,18,19,22],
+// })
