@@ -152,12 +152,14 @@ function renderDeck(){
 
 		document.getElementById("deck").appendChild(card);
 	}
+
+  alert("O seu oponente possui as cartas: " + switchName(deck[2]) + " e " + switchName(deck[3]) + "!");
+  // console.log(switchName(deck[2]), switchName(deck[3]));
 }
 
 function load(){
 	deck = getDeck();
 	shuffle();
-  alert("O seu oponente possui as cartas: " + switchName(deck[2]) + " e " + switchName(deck[3]) + "!");
 	// renderDeck();
 }
 
