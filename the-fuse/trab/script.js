@@ -147,7 +147,6 @@ function renderDeck(){
 
 		// value.innerHTML = deck[i];
 		// value.innerHTML = deck[i].Value;
-    console.log(deck[i]);
 		card.appendChild(value);
 		card.appendChild(suit);
 
@@ -158,7 +157,8 @@ function renderDeck(){
 function load(){
 	deck = getDeck();
 	shuffle();
-	renderDeck();
+  alert("O seu oponente possui as cartas: " + switchName(deck[2]) + " e " + switchName(deck[3]) + "!");
+	// renderDeck();
 }
 
 window.onload = load;
