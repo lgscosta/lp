@@ -1,3 +1,4 @@
+"use strict";
 const http = require("http");
 const fs = require('fs').promises;
 const host = 'localhost';
@@ -43,3 +44,18 @@ fs.readFile(__dirname + "/index.html")
         console.error(`Could not read index.html file: ${err}`);
         process.exit(1);
     });
+
+// var express = require("express");
+// app = express();
+
+// app.get("/", function(req,res){
+//     res.sendFile(__dirname + "/index.html")
+// })
+// app.get("/estilo.css", function(req,res){
+//     res.sendFile(__dirname + "/styles.css")
+// })
+// app.get("/script.js", function(req,res){
+//     res.sendFile(__dirname + "/script.js")
+// })
+
+// app.listen(8080);
