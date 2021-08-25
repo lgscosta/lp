@@ -144,7 +144,7 @@ html
 {
   background-image: url('back.jpeg');
   height: 300px;
-  width: 500px;
+  width: 600px;
   border-style: groove;
   border-color: black;
   font-family: "Copperplate",fantasy;
@@ -152,9 +152,9 @@ html
 
 .info-start
 {
-  background-image: url('back.jpeg');
-  height: 600px;
-  width: 1000px;
+  background-image: url('wallpaper.jpeg');
+  height: 470px;
+  width: 800px;
   border-style: groove;
   border-color: rgb(168, 220, 255);
   font-family: "Copperplate",fantasy;
@@ -302,4 +302,41 @@ html
   border-style: groove;
   border-color: pink;
   font-family: "Copperplate",fantasy;
+}
+
+.info-start .swal-text
+{
+  text-align: center;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.info-start .swal-title
+{
+  text-align: center;
+  color: rgb(168, 220, 255);
+}
+
+#att
+{
+  font-size: x-large;
+}
+
+.hp
+{
+  padding: 10px 20px;
+  border-radius:30px;
+  margin: 10px;
+  display:inline-block;
+  text-decoration: none;
+}
+
+#npc
+{
+  color: red;
+}
+
+#player
+{
+  color: gold;
 }

@@ -290,14 +290,14 @@ function competition(n){
 
   if(player > npc){
     playerWins = playerWins + 1;
-}
-else if(npc > player){
-    NPCWins = NPCWins + 1;
-}
+    }
+    else if(npc > player){
+        NPCWins = NPCWins + 1;
+    }
 
-roundMax = roundMax + 1;
-printRound(roundMax, playerCard, player, npcCard, npc);
-
+    murder(player, npc);
+    printRound(roundMax, playerCard, player, npcCard, npc);
+    roundMax = roundMax + 1;
 
   if(roundMax >= 13){
     if(NPCWins > playerWins){
@@ -341,6 +341,27 @@ function changeColor(attRound, type){
         break;
     }
   }
+}
+
+function murder(player, npc){
+    if(player > npc){
+        hpNPC = hpNPC - (player - npc);
+        const changeNPC = document.querySelector("#npc");
+        changeNPC.innerHTML = "Player hp: " + hpNPC;
+    }
+    else if(npc > player){
+        hpPlayer = hpPlayer - (npc - player);
+        const changePlayer = document.querySelector("#player");
+        changePlayer.innerHTML = "Player hp: " + hpPlayer;
+    }
+
+    if(hpPlayer === 0){
+        window.location.href = "defeat.html";
+    }
+    if(hpNPC === 0){
+        window.location.href = "victory.html";
+    }
+    
 }
 
 function choiceNPC(){
@@ -576,7 +597,22 @@ function renderDeck(){
 function load(){
   swal({
     title: "The Fuse",
-    text: "message",
+    text: "Both players starts the game with 500 health points.\n" +
+    "In every turn both players receive 2 characters cards. \n" +
+    "In every turn one of the 4 atributes of the characters\n" +
+    "are sorted to be the atribute of the duel in this turn.\n" +
+    "All character cards have a speciall effect. \n" +
+    "After the effects are called, the calculation between\n" +
+    "the characters sorted atribute.\n" +
+    "The winner of the turn is who have the biggest atribute value.\n" +
+    "The damage calculation in the end of the turn is the value of\n" +
+    "the winner value subtracted by the loser value.\n" +
+    "This game have not card discards, so you can have the sam\n" +
+    "card in your hand more than a time in a row.\n" +
+    "The game ends when a player health points gets 0 or lower,\n" +
+    "or when it cames to the 13 turn. In this case, wins\n" +
+    "who have more hp.\n" +
+    "Ties can happens.",
     button: "Ready",
     className: "info-start"
   });
