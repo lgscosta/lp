@@ -49,6 +49,19 @@
     border-radius:30px;
     margin: 10px;
     display:inline-block;
+    text-decoration: none;
+}
+
+.info
+{
+    background: black;
+    color: rgb(27, 120, 182);
+    padding: 10px 12px;
+    border-radius:30px;
+    margin: 2px;
+    display:inline-block;
+    font-size: smaller;
+    text-decoration: none;
 }
 
 #coffe

@@ -1,15 +1,13 @@
-// var cards = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
-// var suits = ["diamonds", "hearts", "spades", "clubs"];
 var cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
 var attributes = [1, 2, 3, 4];
 var deck = new Array();
 var attRound;
+var roundMax = 1;
 
 function getDeck(){
   var deck = new Array();
 	
   for(var x = 0; x < cards.length; x++){
-    // var card = {Value: cards[x]};
     var card = cards[x];
     deck.push(card);
   }
@@ -280,10 +278,138 @@ function switchAttributes(id){
   return v;
 }
 
+function switchInfo(key){
+  let message;
+
+  switch(key){
+    case 1: 
+    //popup
+    message = "The Mother/nPeculiaridade: Zera um dos atributos da carta de personagem do adversário que será jogada aleatoriamente./nCL: 65/nLAB: 20/nREP: 100/nENE: 85";
+    break; 
+
+    case 2:
+    //popup
+    message = "The Noise/nPeculiaridade: Um dos seus atributos é zerado aleatoriamente./nCL: 50/nLAB: 60/nREP: 10/nENE: 45";
+    break; 
+
+    case 3:
+    //popup
+    message = "The Surfer/nPeculiaridade: Tem 50% de chance de fugir da batalha./nCL: 40/nLAB: 60/nREP: 15/nENE: 90";
+    break; 
+
+    case 4:
+    //popup
+    message = "The Dancer/nPeculiaridade: Perde 5 pontos de reputação para cada rodada que já se passou na partida./nCL: 75/nLAB: 40/nREP: 60/nENE: 75";
+    break; 
+
+    case 5:
+    //popup
+    message = "The Optimizer/nPeculiaridade: Caso “The Optimazer” supere a carta do adversário em mais da metade dos atributos, ela vence o duelo. /nCL: 80/nLAB: 90/nREP: 80/nENE: 70";
+    break; 
+
+    case 6:
+    //popup
+    message = "The Rookie/nPeculiaridade: Dobre um dos atributos aleatoriamente mas divide por um número aleatório entre 1 e 4./nCL: 50/nLAB: 100/nREP: 70/nENE: 80";
+    break; 
+
+    case 7:
+    //popup
+    message = "The Whisper/nPeculiaridade: Recupera a vida do jogador no valor de um de seus atributos logo que é jogado./nCL: 60/nLAB: 80/nREP: 90/nENE: 45";
+    break; 
+
+    case 8:
+    //popup
+    message = "The Transformer/nPeculiaridade: A energia aumenta em 10 pontos a cada 2 rodadas passadas no jogo./nCL: 80/nLAB: 70/nREP: 90/nENE: 50";
+    break; 
+
+    case 9:
+    //popup
+    message = "The Intruder/nPeculiaridade: Zera um de seus atributos e adiciona 40 pontos a todos os outros./nCL: 80/nLAB: 70/nREP: 70/nENE: 40";
+    break; 
+
+    case 10:
+    //popup
+    message = "The Oracle/nPeculiaridade: Na verdade the Oracle não pode ser vencido em batalha pois não usamos python no código. Vitória automática e 100 de dano./nCL: 60/nLAB: 95/nREP: 100/nENE: 70";
+    break; 
+
+    case 11:
+    //popup
+    message = "The Witcher/nPeculiaridade: Independente do resultado do duelo, causa dano direto ao adversário no valor de um de seus atributos escolhidos aleatoriamente. Se vencer a rodada, causa dano normalmente./nCL: 85/nLAB: 75/nREP: 100/nENE: 65";
+    break; 
+
+    case 12:
+    //popup
+    message = "The Hunter/nPeculiaridade: Causa 0-100 de dano ao adversário no começo da rodada e 0-150 a si mesmo quando jogado./nCL: 60/nLAB: 30/nREP: 30/nENE: 70";
+    break; 
+
+    case 13:
+    //popup
+    message = "The Boss/nPeculiaridade: Graças a sua autoridade, dobra aleatoriamente um dos seus atributos./nCL: 75/nLAB: 70/nREP: 50/nENE: 40";
+    break; 
+
+    case 14:
+    //popup
+    message = "The Aunt/nPeculiaridade: Se estiver com menos de 60% da vida, todos os atributos dessa carta serão aumentados para 100./nCL: 60/nLAB: 70/nREP: 95/nENE: 85";
+    break; 
+
+    case 15:	
+    //popup
+    message = "The Poisson/nBase: Magnos/nPeculiaridade:Se seu adversário tiver mais do que 100 pontos de vida a mais que você, cause 50 de dano./nCL: 80/nLAB: 35/nREP: 65/nENE: 80";
+    break; 
+
+    case 16:
+    //popup
+    message = "The WHO?/nPeculiaridade: Na verdade não se sabe muito sobre esse cara, ele não tem efeitos./nCL: 50/nLAB: 50/nREP: 50/nENE: 50";
+    break; 
+
+    case 17:
+    //popup
+    message = "The Ruler/nPeculiaridade: Se a soma total dos atributos do adversário não superar 260, ele não tem autorização para enfrentar “The Ruler”./nCL: 45/nLAB: 35/nREP: 75/nENE: 90";
+    break; 
+
+    case 18:
+    //popup
+    message = "The Virtual Machine/nPeculiaridade: Quando jogado, dois de seus atributos se somam e depois dois deles se subtraem./nCL: 85/nLAB: 70/nREP: 75/nENE: 75";
+    break; 
+
+    case 19:
+    //popup
+    message = "The Silk Touch/nPeculiaridade: Caso jogada em uma rodada impar, dobra dois de seus atributos./nCL: 40/nLAB: 70/nREP: 60/nENE: 50";
+    break; 
+
+    case 20:
+    //popup
+    message = "The Preppy/nPeculiaridade: Pode, aleatoriamente, reduzir 5 pontos de seu atributo de reputação, em troca de adicionar 10 pontos ao atributo de Uso do Lab./nCL: 75/nLAB: 70/nREP: 65";
+    break; 
+
+    case 21:
+    //popup
+    message = "The Runaway/nPeculiaridade: Quando chamado duplica o atributo de reputação, pois é um ícone./nCL: 85/nLAB: 35/nREP: 90/nENE: 80"
+    break;
+
+    case 22:
+    //popup
+    message = "The Siren/nPeculiaridade: Se jogada antes da 5 rodada seus atributos de lab triplicam./nCL: 100/nLAB: 60/nREP: 80/nENE: 70";
+    break; 
+
+    case 23:
+    //popup
+    message = "The Guardian/nPeculiaridade: Tem 50% de chance de dobrar o atributo do duelo./nCL: 70/nLAB: 95/nREP: 65/nENE: 80";
+    break; 
+
+    case 24: 
+    //popup
+    message = "The SadBoy/nPeculiaridade: Ele só está triste./nCL: 70/nLAB: 70/nREP: 90/nENE: 50"
+    break;
+  }
+
+  alert(message);
+}
+
 function competition(n){
   var player = switchAttributes(deck[n])[attRound-1];
   var npc = switchAttributes(choiceNPC())[attRound-1];
-  alert(player + switchName(deck[n]) + " " + npc + switchName(choiceNPC()));
+  // alert(player + switchName(deck[n]) + " " + npc + switchName(choiceNPC()));
 
   if(player > npc){
     alert("Go girll");
@@ -293,6 +419,42 @@ function competition(n){
   }
   else{
     alert("Oh, ok... unexpected");
+  }
+
+  roundMax = roundMax + 1;
+
+  if(roundMax === 13){
+    alert("fim de jogo");
+  } else{
+    changeColor(attRound, 1);
+    shuffle();
+  }
+}
+
+function changeColor(attRound, type){
+  var attribute = switchAttId(attRound);
+  let change = document.getElementById(attribute);
+
+  if(type === 0){
+    change.style.backgroundColor = 'black';
+  } else{
+    switch(attRound){
+      case 1:
+        change.style.backgroundColor = 'rgb(146, 85, 16)';
+        break;
+  
+      case 2:
+        change.style.backgroundColor = 'rgb(17, 112, 37)';
+        break;
+  
+      case 3:
+        change.style.backgroundColor = 'rgb(231, 30, 187)';
+        break;
+    
+      default:
+        change.style.backgroundColor = 'rgb(25, 93, 196)';
+        break;
+    }
   }
 }
 
@@ -316,33 +478,54 @@ function getRandomArbitrary(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
+function infoCard(n){
+  alert(switchInfo(deck[n]));
+}
+
 function renderDeck(){
 	document.getElementById('deck').innerHTML = '';
 
-	for(var i = 0; i < 2; i++){
+  // first card on 
 		var card = document.createElement("div");
 		var value = document.createElement("div");
 		var suit = document.createElement("div");
 		card.className = "card";
 		value.className = "value";
-		suit.className = "suit " + deck[i].Suit;
+		suit.className = "suit " + deck[0].Suit;
 
-    value.innerHTML = switchName(deck[i]);
+    value.innerHTML = switchName(deck[0]);
 
-		// value.innerHTML = deck[i];
-		// value.innerHTML = deck[i].Value;
 		card.appendChild(value);
 		card.appendChild(suit);
 
 		document.getElementById("deck").appendChild(card);
-	}
+  // first card out 
+
+  // second card on 
+    var card = document.createElement("div");
+    var value = document.createElement("div");
+    var suit = document.createElement("div");
+    card.className = "card";
+    value.className = "value";
+    suit.className = "suit " + deck[1].Suit;
+
+    value.innerHTML = switchName(deck[1]);
+
+    card.appendChild(value);
+    card.appendChild(suit);
+
+    card.onmouseenter = console.log("aaaa");
+    
+    document.getElementById("deck").appendChild(card);
+  // second card out 
 
   // returns round attribute
   attRound = getRandomArbitrary(1, 5);
   
-  var attribute = switchAttId(attRound)
-  let change = document.getElementById(attribute);
-  change.style.backgroundColor = 'black';
+  changeColor(attRound, 0);
+  // var attribute = switchAttId(attRound);
+  // var change = document.getElementById(attribute);
+  // change.style.backgroundColor = 'black';
   
   // alert(attRound);
 
