@@ -41,6 +41,56 @@
     display:inline-block;
 }
 
+.choices
+{
+    background: black;
+    color: rgb(168, 220, 255);
+    padding: 10px 20px;
+    border-radius:30px;
+    margin: 10px;
+    display:inline-block;
+}
+
+#coffe
+{
+    background: rgb(146, 85, 16);
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    border-radius:30px;
+    margin: 10px;
+    display:inline-block;
+}
+
+#lab
+{
+    background: rgb(17, 112, 37);
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    border-radius:30px;
+    margin: 10px;
+    display:inline-block;
+}
+
+#reputation
+{
+    background: rgb(231, 30, 187);
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    border-radius:30px;
+    margin: 10px;
+    display:inline-block;
+}
+
+#energy
+{
+    background: rgb(25, 93, 196);
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    border-radius:30px;
+    margin: 10px;
+    display:inline-block;
+}
+
 .card .value{
     font-size:14pt;
     /* font-family: sans-serif; */
