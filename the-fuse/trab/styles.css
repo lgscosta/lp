@@ -273,3 +273,33 @@ html
   border-color: black;
   font-family: "Copperplate",fantasy;
 }
+
+.info-won
+{
+  background-image: url('back.jpeg');
+  height: 300px;
+  width: 500px;
+  border-style: groove;
+  border-color: gold;
+  font-family: "Copperplate",fantasy;
+}
+
+.info-lost
+{
+  background-image: url('back.jpeg');
+  height: 300px;
+  width: 500px;
+  border-style: groove;
+  border-color: rgb(105, 16, 16);
+  font-family: "Copperplate",fantasy;
+}
+
+.info-tie
+{
+  background-image: url('back.jpeg');
+  height: 300px;
+  width: 500px;
+  border-style: groove;
+  border-color: pink;
+  font-family: "Copperplate",fantasy;
+}

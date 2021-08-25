@@ -141,7 +141,7 @@ function switchName(id){
         break;
 
     case 16:
-        v = "The WHO";
+        v = "The WHO??";
         break;
 
     case 17:
@@ -283,22 +283,21 @@ function switchAttributes(id){
 }
 
 function competition(n){
-  var player = switchAttributes(deck[n])[attRound-1];
-  var npc = switchAttributes(choiceNPC())[attRound-1];
+  var playerCard = deck[n];
+  var player = switchAttributes(playerCard)[attRound-1];
+  var npcCard = choiceNPC();
+  var npc = switchAttributes(npcCard)[attRound-1];
 
   if(player > npc){
-    alert("Go girll");
     playerWins = playerWins + 1;
-  }
-  else if(npc > player){
-    alert("Welcome to real world");
+}
+else if(npc > player){
     NPCWins = NPCWins + 1;
-  }
-  else{
-    alert("Oh, ok... unexpected");
-  }
+}
 
-  roundMax = roundMax + 1;
+roundMax = roundMax + 1;
+printRound(roundMax, playerCard, player, npcCard, npc);
+
 
   if(roundMax >= 13){
     if(NPCWins > playerWins){
@@ -356,6 +355,36 @@ function choiceNPC(){
       return deck[3];
       break;
   }
+}
+
+function printRound(roundMax, playerCard, player, npcCard, npc){
+    if(player > npc){
+        swal({
+            title: "Round " + roundMax,
+            text: "You won with the character " + "\'" + switchName(playerCard) + "\' who made " + player + " points on attribute \'"
+            + switchAttArray(attributes[attRound-1]) + "\'.\nThe NPC lost with the character "+ "\'" + switchName(npcCard) + "\' who made " + npc + " points.",
+            button: false,
+            className: "info-won"
+        });
+    }
+    else if(npc > player){
+        swal({
+            title: "Round " + roundMax,
+            text: "NPC won with the character " + "\'" + switchName(npcCard) + "\' who made " + npc + " points on attribute \'"
+            + switchAttArray(attributes[attRound-1]) + "\'.\nYou lost with the character "+ "\'" + switchName(playerCard) + "\' who made " + player + " points.",
+            button: false,
+            className: "info-lost"
+        });
+    }
+    else{
+        swal({
+            title: "Round " + roundMax,
+            text: "There was a tie between you character: " + "\'" + switchName(playerCard) + "\' and NPC's character " + "\'" + switchName(npcCard)
+            + "\' with " + player + " points on attribute \'" + switchAttArray(attributes[attRound-1]) + "\'.",
+            button: false,
+            className: "info-tie"
+        });
+    }
 }
 
 function getRandomArbitrary(min, max) {
@@ -494,7 +523,7 @@ function switchInfo(key){
     }
 
     swal({
-        title: switchName(deck[key]),
+        title: switchName(key),
         text: message,
         button: "Got it!",
         className: "info-card"
