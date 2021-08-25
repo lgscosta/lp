@@ -3,6 +3,10 @@ var attributes = [1, 2, 3, 4];
 var deck = new Array();
 var attRound;
 var roundMax = 1;
+var hpPlayer = 500;
+var hpNPC = 500
+var playerWins = 0;
+var NPCWins = 0;
 
 function getDeck(){
   var deck = new Array();
@@ -278,10 +282,96 @@ function switchAttributes(id){
   return v;
 }
 
-function switchInfo(key){
-  let message;
+function competition(n){
+  var player = switchAttributes(deck[n])[attRound-1];
+  var npc = switchAttributes(choiceNPC())[attRound-1];
 
-  switch(key){
+  if(player > npc){
+    alert("Go girll");
+    playerWins = playerWins + 1;
+  }
+  else if(npc > player){
+    alert("Welcome to real world");
+    NPCWins = NPCWins + 1;
+  }
+  else{
+    alert("Oh, ok... unexpected");
+  }
+
+  roundMax = roundMax + 1;
+
+  if(roundMax >= 13){
+    if(NPCWins > playerWins){
+      window.location.href = "defeat.html";
+    }
+    else if(playerWins > NPCWins){
+      window.location.href = "victory.html";
+    }
+    else{
+      changeColor(attRound, 1);
+      shuffle();
+    }
+  } else{
+    changeColor(attRound, 1);
+    shuffle();
+  }
+}
+
+function changeColor(attRound, type){
+  var attribute = switchAttId(attRound);
+  let change = document.getElementById(attribute);
+
+  if(type === 0){
+    change.style.backgroundColor = 'black';
+  } else{
+    switch(attRound){
+      case 1:
+        change.style.backgroundColor = 'rgb(146, 85, 16)';
+        break;
+  
+      case 2:
+        change.style.backgroundColor = 'rgb(17, 112, 37)';
+        break;
+  
+      case 3:
+        change.style.backgroundColor = 'rgb(231, 30, 187)';
+        break;
+    
+      default:
+        change.style.backgroundColor = 'rgb(25, 93, 196)';
+        break;
+    }
+  }
+}
+
+function choiceNPC(){
+  let number = getRandomArbitrary(1, 3);
+  
+  switch (number) {
+    case 1:
+      return deck[2];
+      break;
+  
+    default:
+      return deck[3];
+      break;
+  }
+}
+
+function getRandomArbitrary(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function infoCard(n){
+    switchInfo(deck[n]);
+}
+
+function switchInfo(key){
+    let message;
+
+    switch(key){
     case 1: 
     //popup
     message = "The Mother/nPeculiaridade: Turn a random enemy attribute into zero./nCL: 65/nLAB: 20/nREP: 100/nENE: 85";
@@ -401,85 +491,9 @@ function switchInfo(key){
     //popup
     message = "The SadBoy/nPeculiaridade: He is just sad./nCL: 70/nLAB: 70/nREP: 90/nENE: 50"
     break;
-  }
-
-  alert(message);
-}
-
-function competition(n){
-  var player = switchAttributes(deck[n])[attRound-1];
-  var npc = switchAttributes(choiceNPC())[attRound-1];
-  // alert(player + switchName(deck[n]) + " " + npc + switchName(choiceNPC()));
-
-  if(player > npc){
-    alert("Go girll");
-  }
-  else if(npc > player){
-    alert("Welcome to real world");
-  }
-  else{
-    alert("Oh, ok... unexpected");
-  }
-
-  roundMax = roundMax + 1;
-
-  if(roundMax === 13){
-    alert("fim de jogo");
-  } else{
-    changeColor(attRound, 1);
-    shuffle();
-  }
-}
-
-function changeColor(attRound, type){
-  var attribute = switchAttId(attRound);
-  let change = document.getElementById(attribute);
-
-  if(type === 0){
-    change.style.backgroundColor = 'black';
-  } else{
-    switch(attRound){
-      case 1:
-        change.style.backgroundColor = 'rgb(146, 85, 16)';
-        break;
-  
-      case 2:
-        change.style.backgroundColor = 'rgb(17, 112, 37)';
-        break;
-  
-      case 3:
-        change.style.backgroundColor = 'rgb(231, 30, 187)';
-        break;
-    
-      default:
-        change.style.backgroundColor = 'rgb(25, 93, 196)';
-        break;
     }
-  }
-}
 
-function choiceNPC(){
-  let number = getRandomArbitrary(1, 3);
-  
-  switch (number) {
-    case 1:
-      return deck[2];
-      break;
-  
-    default:
-      return deck[3];
-      break;
-  }
-}
-
-function getRandomArbitrary(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min;
-}
-
-function infoCard(n){
-  alert(switchInfo(deck[n]));
+    alert(message);
 }
 
 function renderDeck(){
@@ -523,27 +537,16 @@ function renderDeck(){
   attRound = getRandomArbitrary(1, 5);
   
   changeColor(attRound, 0);
-  // var attribute = switchAttId(attRound);
-  // var change = document.getElementById(attribute);
-  // change.style.backgroundColor = 'black';
-  
-  // alert(attRound);
-
-  // var npc = choiceNPC();
-  // var player1 = switchAttributes(deck[0])[attRound-1];
-  // var player2 = switchAttributes(deck[1])[attRound-1];
-  // var npc1 = switchAttributes(deck[2])[attRound-1];
-  // var npc2 = switchAttributes(deck[3])[attRound-1];
-
-
-  // alert(player1 + switchName(deck[0]));
-  // alert(player2 + switchName(deck[1]));
-  // alert(pc1 + switchName(deck[2]));
-  // alert(pc2 + switchName(deck[3]));
-  // alert("O seu oponente possui as cartas: " + switchName(deck[2]) + " e " + switchName(deck[3]) + "!");
 }
 
 function load(){
+  swal({
+    title: "The Fuse",
+    text: "message",
+    button: "Ready",
+    className: "info-start"
+  });
+
 	deck = getDeck();
 	shuffle();
 	// renderDeck();
@@ -553,3 +556,5 @@ window.onload = load;
 
 
 // AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+    

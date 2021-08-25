@@ -112,25 +112,9 @@
 
 .card .suit
 {
-    background-image: url('card.png');
+    background-image: url('The\ Siren.png');
     height: 200px;
     width: 180px;
-}
-
-.card .diamonds
-{
-    background-position-y: 100px;
-}
-
-.card .hearts
-{
-    background-position-x: 90px;
-}
-
-.card .clubs
-{
-    background-position-x:90px;
-    background-position-y:100px;
 }
 
 #fuse
@@ -154,4 +138,138 @@ html
   background-image: url('wallpaper.jpeg');
   height: auto;
   width: auto;
+}
+
+.info-card
+{
+  background-image: url('back.jpeg');
+  height: 300px;
+  width: 500px;
+  border-style: groove;
+  border-color: black;
+  font-family: "Copperplate",fantasy;
+}
+
+.info-start
+{
+  background-image: url('back.jpeg');
+  height: 600px;
+  width: 1000px;
+  border-style: groove;
+  border-color: rgb(168, 220, 255);
+  font-family: "Copperplate",fantasy;
+}
+
+.swal-title
+{
+  color: white;
+  margin-bottom: 28px;
+}
+
+.swal-text
+{
+  color: #d1d1d1;
+}
+
+.swal-overlay 
+{
+  background-color: rgba(105, 145, 221, 0.45);
+}
+
+.swal-button
+{
+  background-color: black;
+  color: white(168, 220, 255);
+}
+
+.final
+{
+    width:50%;
+    margin: 20px auto;
+    background:rgb(7, 7, 7);
+    border:solid 10px gold;
+    padding: 10px;
+    border-radius:10px;
+    text-align: center;
+    color:white;
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+    font-family: "Copperplate",fantasy;
+}
+
+.final2
+{
+    width:50%;
+    margin: 20px auto;
+    background:rgb(7, 7, 7);
+    border:solid 10px rgb(105, 16, 16);
+    padding: 10px;
+    border-radius:10px;
+    text-align: center;
+    color:white;
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+    font-family: "Copperplate",fantasy;
+}
+
+.final #end
+{
+  color: gold;
+}
+
+.final #button
+{
+  color: gold;
+  text-decoration: none;
+}
+
+.final #result
+{
+  background: gold;
+  color: black;
+  padding: 10px 20px;
+  border-radius:30px;
+  margin: 10px;
+  display:inline-block;
+  text-decoration: none;
+}
+
+.final2 #end
+{
+  color: rgb(105, 16, 16);
+}
+
+.final2 #button
+{
+  color: rgb(105, 16, 16);
+  text-decoration: none;
+}
+
+.final2 #result
+{
+  background: rgb(105, 16, 16);
+  color: black;
+  padding: 10px 20px;
+  border-radius:30px;
+  margin: 10px;
+  display:inline-block;
+  text-decoration: none;
+}
+
+.bad-end
+{
+  background-color: rgb(105, 16, 16);
+  height: 600px;
+  width: 1000px;
+  border-style: groove;
+  border-color: black;
+  font-family: "Copperplate",fantasy;
+}
+
+.good-end
+{
+  background-color: rgb(148, 112, 23);
+  height: 600px;
+  width: 1000px;
+  border-style: groove;
+  border-color: black;
+  font-family: "Copperplate",fantasy;
 }
