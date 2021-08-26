@@ -180,7 +180,7 @@ function switchName(id){
   return v;
 }
 
-function switchEffects(id,idNpc,attRound,Card,turnsMax){
+function switchEffects(playerCard,npcCard,attRound,player,roundMax){
   switch(id){
     //case 1:
 	//let aux = getRandomArbitrary(1,5); 	  
@@ -191,21 +191,21 @@ function switchEffects(id,idNpc,attRound,Card,turnsMax){
     case 2:
        let aux = getRandomArbitrary(1, 5);
 	if(aux === attRound){
-		Card = 0; 
+		player = 0; 
 	}
 	break; 	
 		  
     case 4:
 	if(attRound === 3){	  
-	turnsMax *= 5; 
-	Card -= turnsMax; 
+	roundMax *= 5; 
+	player -= roundMax; 
   	}
 	break; 
 		  
     case 5:
 	let cont = 0; 	  
-	let atr1 = switchAttributes(id); 	  
-	let atr2 = switchAttributes(idNpc); 
+	let atr1 = switchAttributes(playerCard); 	  
+	let atr2 = switchAttributes(npcCard); 
 	if(atr1[0] > atr2[0])
 	cont++;
 	if(atr1[1] > atr2[1])
@@ -215,19 +215,19 @@ function switchEffects(id,idNpc,attRound,Card,turnsMax){
 	if(atr1[3] > atr[3])
 	cont++; 
 	if(cont >=3)
-	Card == 1000; 
+	player == 1000; 
 	break; 
 		  
   case 6:
 	let aux = getRandomArbitrary(1, 5);
 	if(aux === attRound){
-	   Card *= 2; 
+	   player *= 2; 
 	   aux = getRandomArbitrary(1,5); 
-	   Card = Card/aux; 	
+	   player = player/aux; 	
 	}
 	break; 
   }
-
+	return player; 
 }
 
 function switchAttributes(id){
@@ -338,7 +338,8 @@ function competition(n){
   var npcCard = choiceNPC();
   var npc = switchAttributes(npcCard)[attRound-1];
 
-  
+  player = switchEffects(playerCard,npcCard,attRound-1,player,roundMax);
+	
     if(player > npc){
         playerWins = playerWins + 1;
     }
