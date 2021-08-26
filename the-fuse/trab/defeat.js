@@ -10,7 +10,7 @@ function audioPlay(){
     
     swal({
         title: "Defeat",
-        text: "message",
+        text: "Oh no... It's okay...\nYou can try again or beg for help to The Oracle.\n\n\nClick out to exit.",
         buttons: false,  
         className: "bad-end"
     });

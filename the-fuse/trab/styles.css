@@ -257,21 +257,31 @@ html
 .bad-end
 {
   background-color: rgb(105, 16, 16);
-  height: 600px;
-  width: 1000px;
+  height: 300px;
+  width: 300px;
   border-style: groove;
   border-color: black;
   font-family: "Copperplate",fantasy;
 }
 
+.bad-end .swal-text
+{
+  text-align: center;
+}
+
 .good-end
 {
   background-color: rgb(148, 112, 23);
-  height: 600px;
-  width: 1000px;
+  height: 300px;
+  width: 300px;
   border-style: groove;
   border-color: black;
   font-family: "Copperplate",fantasy;
+}
+
+.good-end .swal-text
+{
+  text-align: center;
 }
 
 .info-won
@@ -339,4 +349,41 @@ html
 #player
 {
   color: gold;
+}
+
+#oracle
+{
+  text-align: center;
+  font-size: 126px;
+  color:rgba(63, 138, 223, 0.466);
+  font-family: myfont;
+}
+
+#oracleHtml
+{
+  background-image: url('beach.jpeg');
+  background-size: cover;
+}
+
+.odara
+{
+    width:50%;
+    margin: 20px auto;
+    background:transparent;
+    border:solid 10px rgba(63, 138, 223, 0.466);
+    padding: 10px;
+    border-radius:10px;
+    text-align: center;
+    color:rgba(0, 0, 0, 0.438);
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+    font-family: "Copperplate",fantasy;
+}
+
+.odara #button
+{
+  background-image: "odara.png";
+  /* background-size: 300px 300px; */
+  background: transparent;
+  border: none;
+  background-size:300px;
 }

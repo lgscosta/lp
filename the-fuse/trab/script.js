@@ -288,8 +288,9 @@ function competition(n){
   var npcCard = choiceNPC();
   var npc = switchAttributes(npcCard)[attRound-1];
 
-  if(player > npc){
-    playerWins = playerWins + 1;
+  
+    if(player > npc){
+        playerWins = playerWins + 1;
     }
     else if(npc > player){
         NPCWins = NPCWins + 1;
@@ -299,16 +300,18 @@ function competition(n){
     printRound(roundMax, playerCard, player, npcCard, npc);
     roundMax = roundMax + 1;
 
-  if(roundMax >= 13){
-    if(NPCWins > playerWins){
-      window.location.href = "defeat.html";
+  if(roundMax > 14){
+    if(player === npc){
+        changeColor(attRound, 1);
+        shuffle();
     }
     else if(playerWins > NPCWins){
-      window.location.href = "victory.html";
+        sleep(5000);
+        window.location.href = "victory.html"
     }
     else{
-      changeColor(attRound, 1);
-      shuffle();
+        sleep(5000);
+        window.location.href = "defeat.html";
     }
   } else{
     changeColor(attRound, 1);
@@ -343,6 +346,14 @@ function changeColor(attRound, type){
   }
 }
 
+function outputLog(text){
+    var fso = new ActiveXObject("Scripting.FileSystemObject");
+    var out = fso.CreateTextFile("output.txt", true); 
+    out.WriteLine(text);
+
+    out.Close(); 
+}
+
 function murder(player, npc){
     if(player > npc){
         hpNPC = hpNPC - (player - npc);
@@ -356,13 +367,23 @@ function murder(player, npc){
     }
 
     if(hpPlayer === 0){
-        window.location.href = "defeat.html";
+        sleep(5000);
+        window.location.href = "defeat.html"
     }
     if(hpNPC === 0){
-        window.location.href = "victory.html";
-    }
+        sleep(5000);
+        window.location.href = "victory.html"
+        }
     
 }
+
+function sleep(milliseconds) {
+    const date = Date.now();
+    let currentDate = null;
+    do {
+      currentDate = Date.now();
+    } while (currentDate - date < milliseconds);
+  }
 
 function choiceNPC(){
   let number = getRandomArbitrary(1, 3);
@@ -380,31 +401,67 @@ function choiceNPC(){
 
 function printRound(roundMax, playerCard, player, npcCard, npc){
     if(player > npc){
-        swal({
-            title: "Round " + roundMax,
-            text: "You won with the character " + "\'" + switchName(playerCard) + "\' who made " + player + " points on attribute \'"
-            + switchAttArray(attributes[attRound-1]) + "\'.\nThe NPC lost with the character "+ "\'" + switchName(npcCard) + "\' who made " + npc + " points.",
-            button: false,
-            className: "info-won"
-        });
+        if(roundMax >= 13){
+            swal({
+                title: "Round " + roundMax,
+                text: "You won with the character " + "\'" + switchName(playerCard) + "\' who made " + player + " points on attribute \'"
+                + switchAttArray(attributes[attRound-1]) + "\'.\nThe NPC lost with the character "+ "\'" + switchName(npcCard) + "\' who made " + npc + " points."
+                + "\n\nClick out and wait a sec.",
+                button: false,
+                className: "info-won"
+            });
+        }
+        else{
+            swal({
+                title: "Round " + roundMax,
+                text: "You won with the character " + "\'" + switchName(playerCard) + "\' who made " + player + " points on attribute \'"
+                + switchAttArray(attributes[attRound-1]) + "\'.\nThe NPC lost with the character "+ "\'" + switchName(npcCard) + "\' who made " + npc + " points.",
+                button: false,
+                className: "info-won"
+            });
+        }
     }
     else if(npc > player){
-        swal({
-            title: "Round " + roundMax,
-            text: "NPC won with the character " + "\'" + switchName(npcCard) + "\' who made " + npc + " points on attribute \'"
-            + switchAttArray(attributes[attRound-1]) + "\'.\nYou lost with the character "+ "\'" + switchName(playerCard) + "\' who made " + player + " points.",
-            button: false,
-            className: "info-lost"
-        });
+        if(roundMax >= 13){
+            swal({
+                title: "Round " + roundMax,
+                text: "NPC won with the character " + "\'" + switchName(npcCard) + "\' who made " + npc + " points on attribute \'"
+                + switchAttArray(attributes[attRound-1]) + "\'.\nYou lost with the character "+ "\'" + switchName(playerCard) + "\' who made " + player + " points."
+                + "\n\nClick out and wait a sec.",
+                button: false,
+                className: "info-lost"
+            });
+        }
+        else{
+            swal({
+                title: "Round " + roundMax,
+                text: "NPC won with the character " + "\'" + switchName(npcCard) + "\' who made " + npc + " points on attribute \'"
+                + switchAttArray(attributes[attRound-1]) + "\'.\nYou lost with the character "+ "\'" + switchName(playerCard) + "\' who made " + player + " points.",
+                button: false,
+                className: "info-lost"
+            });
+        }
     }
     else{
-        swal({
-            title: "Round " + roundMax,
-            text: "There was a tie between you character: " + "\'" + switchName(playerCard) + "\' and NPC's character " + "\'" + switchName(npcCard)
-            + "\' with " + player + " points on attribute \'" + switchAttArray(attributes[attRound-1]) + "\'.",
-            button: false,
-            className: "info-tie"
-        });
+        if(roundMax >= 13){
+            swal({
+                title: "Round " + roundMax,
+                text: "There was a tie between you character: " + "\'" + switchName(playerCard) + "\' and NPC's character " + "\'" + switchName(npcCard)
+                + "\' with " + player + " points on attribute \'" + switchAttArray(attributes[attRound-1]) + "\'."
+                + "\n\nClick out and wait a sec.",
+                button: false,
+                className: "info-tie"
+            });
+        }
+        else{
+            swal({
+                title: "Round " + roundMax,
+                text: "There was a tie between you character: " + "\'" + switchName(playerCard) + "\' and NPC's character " + "\'" + switchName(npcCard)
+                + "\' with " + player + " points on attribute \'" + switchAttArray(attributes[attRound-1]) + "\'.",
+                button: false,
+                className: "info-tie"
+            });
+        }
     }
 }
 
