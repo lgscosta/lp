@@ -1,0 +1,389 @@
+
+.deck
+{
+    width:50%;
+    margin: 20px auto;
+    background:rgb(44, 44, 44);
+    border:solid 10px black;
+    padding: 10px;
+    border-radius:10px;
+    text-align: center;
+    color:white;
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+    font-family: "Copperplate",fantasy;
+}
+
+@font-face {
+  font-family: "myfont";
+  src: url("wg_statik.woff") format('woff');
+}
+
+.card
+{
+    padding: 10px;
+    border: solid 1px #808080;
+    background-color: black;
+    display: inline-block;
+    border-radius: 10px;
+    font-size: 14pt;
+    text-align: center;
+    color:rgb(168, 220, 255);
+    margin: 3px;
+}
+
+.btn
+{
+    background: rgb(168, 220, 255);
+    color: rgb(27, 120, 182);
+    padding: 10px 20px;
+    border-radius:30px;
+    margin: 10px;
+    display:inline-block;
+}
+
+.choices
+{
+    background: black;
+    color: rgb(168, 220, 255);
+    padding: 10px 20px;
+    border-radius:30px;
+    margin: 10px;
+    display:inline-block;
+    text-decoration: none;
+}
+
+.info
+{
+    background: black;
+    color: rgb(27, 120, 182);
+    padding: 10px 12px;
+    border-radius:30px;
+    margin: 2px;
+    display:inline-block;
+    font-size: smaller;
+    text-decoration: none;
+}
+
+#coffe
+{
+    background: rgb(146, 85, 16);
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    border-radius:30px;
+    margin: 10px;
+    display:inline-block;
+}
+
+#lab
+{
+    background: rgb(17, 112, 37);
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    border-radius:30px;
+    margin: 10px;
+    display:inline-block;
+}
+
+#reputation
+{
+    background: rgb(231, 30, 187);
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    border-radius:30px;
+    margin: 10px;
+    display:inline-block;
+}
+
+#energy
+{
+    background: rgb(25, 93, 196);
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    border-radius:30px;
+    margin: 10px;
+    display:inline-block;
+}
+
+.card .value{
+    font-size:14pt;
+    /* font-family: sans-serif; */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.card .suit
+{
+    background-image: url('The\ Siren.png');
+    height: 200px;
+    width: 180px;
+}
+
+#fuse
+{
+  text-align: center;
+  font-size: 126px;
+  color:white;
+  font-family: myfont;
+}
+
+#subtitle
+{
+  color: white;
+  text-align: center;
+  font-size: medium;
+  font-family: "Copperplate",fantasy;
+}
+
+html
+{
+  background-image: url('wallpaper.jpeg');
+  height: auto;
+  width: auto;
+}
+
+.info-card
+{
+  background-image: url('back.jpeg');
+  height: 300px;
+  width: 600px;
+  border-style: groove;
+  border-color: black;
+  font-family: "Copperplate",fantasy;
+}
+
+.info-start
+{
+  background-image: url('wallpaper.jpeg');
+  height: 520px;
+  width: 800px;
+  border-style: groove;
+  border-color: rgb(168, 220, 255);
+  font-family: "Copperplate",fantasy;
+}
+
+.swal-title
+{
+  color: white;
+  margin-bottom: 28px;
+}
+
+.swal-text
+{
+  color: #d1d1d1;
+}
+
+.swal-overlay 
+{
+  background-color: rgba(105, 145, 221, 0.45);
+}
+
+.swal-button
+{
+  background-color: black;
+  color: white(168, 220, 255);
+}
+
+.final
+{
+    width:50%;
+    margin: 20px auto;
+    background:rgb(7, 7, 7);
+    border:solid 10px gold;
+    padding: 10px;
+    border-radius:10px;
+    text-align: center;
+    color:white;
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+    font-family: "Copperplate",fantasy;
+}
+
+.final2
+{
+    width:50%;
+    margin: 20px auto;
+    background:rgb(7, 7, 7);
+    border:solid 10px rgb(105, 16, 16);
+    padding: 10px;
+    border-radius:10px;
+    text-align: center;
+    color:white;
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+    font-family: "Copperplate",fantasy;
+}
+
+.final #end
+{
+  color: gold;
+}
+
+.final #button
+{
+  color: gold;
+  text-decoration: none;
+}
+
+.final #result
+{
+  background: gold;
+  color: black;
+  padding: 10px 20px;
+  border-radius:30px;
+  margin: 10px;
+  display:inline-block;
+  text-decoration: none;
+}
+
+.final2 #end
+{
+  color: rgb(105, 16, 16);
+}
+
+.final2 #button
+{
+  color: rgb(105, 16, 16);
+  text-decoration: none;
+}
+
+.final2 #result
+{
+  background: rgb(105, 16, 16);
+  color: black;
+  padding: 10px 20px;
+  border-radius:30px;
+  margin: 10px;
+  display:inline-block;
+  text-decoration: none;
+}
+
+.bad-end
+{
+  background-color: rgb(105, 16, 16);
+  height: 300px;
+  width: 300px;
+  border-style: groove;
+  border-color: black;
+  font-family: "Copperplate",fantasy;
+}
+
+.bad-end .swal-text
+{
+  text-align: center;
+}
+
+.good-end
+{
+  background-color: rgb(148, 112, 23);
+  height: 300px;
+  width: 300px;
+  border-style: groove;
+  border-color: black;
+  font-family: "Copperplate",fantasy;
+}
+
+.good-end .swal-text
+{
+  text-align: center;
+}
+
+.info-won
+{
+  background-image: url('back.jpeg');
+  height: 300px;
+  width: 500px;
+  border-style: groove;
+  border-color: gold;
+  font-family: "Copperplate",fantasy;
+}
+
+.info-lost
+{
+  background-image: url('back.jpeg');
+  height: 300px;
+  width: 500px;
+  border-style: groove;
+  border-color: rgb(105, 16, 16);
+  font-family: "Copperplate",fantasy;
+}
+
+.info-tie
+{
+  background-image: url('back.jpeg');
+  height: 300px;
+  width: 500px;
+  border-style: groove;
+  border-color: pink;
+  font-family: "Copperplate",fantasy;
+}
+
+.info-start .swal-text
+{
+  text-align: center;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.info-start .swal-title
+{
+  text-align: center;
+  color: rgb(168, 220, 255);
+}
+
+#att
+{
+  font-size: x-large;
+}
+
+.hp
+{
+  padding: 10px 20px;
+  border-radius:30px;
+  margin: 10px;
+  display:inline-block;
+  text-decoration: none;
+}
+
+#npc
+{
+  color: red;
+}
+
+#player
+{
+  color: gold;
+}
+
+#oracle
+{
+  text-align: center;
+  font-size: 126px;
+  color:rgba(63, 138, 223, 0.466);
+  font-family: myfont;
+}
+
+#oracleHtml
+{
+  background-image: url('beach.jpeg');
+  background-size: cover;
+}
+
+.odara
+{
+    width:50%;
+    margin: 20px auto;
+    background:transparent;
+    border:solid 10px rgba(63, 138, 223, 0.466);
+    padding: 10px;
+    border-radius:10px;
+    text-align: center;
+    color:rgba(0, 0, 0, 0.438);
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+    font-family: "Copperplate",fantasy;
+}
+
+.odara #button
+{
+  background-image: "odara.png";
+  /* background-size: 300px 300px; */
+  background: transparent;
+  border: none;
+  background-size:300px;
+}

@@ -5,23 +5,27 @@
     Mateus Couto
 ## Ciência da Computação
 
-# Como rodar o servidor
+# Navegador Testado
+O navegador utilizado na implementação foi o **Google Chrome**.
+
+# Código Simples
 O programa está sendo testado dentro do caminho:
-> /the-fuse/server_mac
+> /the-fuse/without-effects
 
-Quando for executada em outra máquina, deletar o diretório
-> node_modules
+Quando for executada em outra máquina, rodar o arquivo"
+> index.html
 
-e rodar o comando:
-```npm install```
+Esse procedimento iniciará o jogo sem efeitos de personagem.
 
-Esse procedimento lerá o arquivo "package.json" e instalará novamente as dependências, de acordo com a arquitetura de sua máquina e sistema operacional.
-
-# Código fonte
+# Código Completo
 O código principal está sendo desenvolvido no diretório:
->/the-fuse/server
+>/the-fuse/with-effects
+
+Esse procedimento iniciará o jogo com efeitos de personagem.
 
 # Próximos Passos:
-- [ ] Verificar porque o html não contempla códigos linkados
-- [ ] Adicionar o pseudocódigo do card game
+- [x] Implementar o código do player
+- [x] Criar novas páginas
+- [ ] Criar efeitos
+- [x] Aplicar CSS
 - [ ] Finalizar design das cartas
