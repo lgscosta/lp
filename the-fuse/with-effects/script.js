@@ -180,6 +180,56 @@ function switchName(id){
   return v;
 }
 
+function switchEffects(id,idNpc,attRound,Card,turnsMax){
+  switch(id){
+    //case 1:
+	//let aux = getRandomArbitrary(1,5); 	  
+	//if(aux === attRound){
+	//let atr1 = switchAttributes(idNpc); 
+	//atr1[aux] = 0;
+	//}	  
+    case 2:
+       let aux = getRandomArbitrary(1, 5);
+	if(aux === attRound){
+		Card = 0; 
+	}
+	break; 	
+		  
+    case 4:
+	if(attRound === 3){	  
+	turnsMax *= 5; 
+	Card -= turnsMax; 
+  	}
+	break; 
+		  
+    case 5:
+	let cont = 0; 	  
+	let atr1 = switchAttributes(id); 	  
+	let atr2 = switchAttributes(idNpc); 
+	if(atr1[0] > atr2[0])
+	cont++;
+	if(atr1[1] > atr2[1])
+	cont++;
+	if(atr1[2] > atr2[2])
+	cont++; 
+	if(atr1[3] > atr[3])
+	cont++; 
+	if(cont >=3)
+	Card == 1000; 
+	break; 
+		  
+  case 6:
+	let aux = getRandomArbitrary(1, 5);
+	if(aux === attRound){
+	   Card *= 2; 
+	   aux = getRandomArbitrary(1,5); 
+	   Card = Card/aux; 	
+	}
+	break; 
+  }
+
+}
+
 function switchAttributes(id){
   switch(id){
     case 1:
