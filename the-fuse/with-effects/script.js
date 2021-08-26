@@ -181,53 +181,72 @@ function switchName(id){
 }
 
 function switchEffects(playerCard,npcCard,attRound,player,roundMax){
-  switch(id){
+    let aux;
+    let div;
+    let cont = 0;     
+    let atr1;     
+    let atr2;
+
+  switch(playerCard){
     //case 1:
-	//let aux = getRandomArbitrary(1,5); 	  
-	//if(aux === attRound){
-	//let atr1 = switchAttributes(idNpc); 
-	//atr1[aux] = 0;
-	//}	  
+  //let aux = getRandomArbitrary(1,5);     
+  //if(aux === attRound-1){
+  //let atr1 = switchAttributes(idNpc); 
+  //atr1[aux] = 0;
+  //}    
     case 2:
-       let aux = getRandomArbitrary(1, 5);
-	if(aux === attRound){
-		player = 0; 
-	}
-	break; 	
-		  
-    case 4:
-	if(attRound === 3){	  
-	roundMax *= 5; 
-	player -= roundMax; 
-  	}
-	break; 
-		  
-    case 5:
-	let cont = 0; 	  
-	let atr1 = switchAttributes(playerCard); 	  
-	let atr2 = switchAttributes(npcCard); 
-	if(atr1[0] > atr2[0])
-	cont++;
-	if(atr1[1] > atr2[1])
-	cont++;
-	if(atr1[2] > atr2[2])
-	cont++; 
-	if(atr1[3] > atr[3])
-	cont++; 
-	if(cont >=3)
-	player == 1000; 
-	break; 
-		  
-  case 6:
-	let aux = getRandomArbitrary(1, 5);
-	if(aux === attRound){
-	   player *= 2; 
-	   aux = getRandomArbitrary(1,5); 
-	   player = player/aux; 	
-	}
-	break; 
+       aux = getRandomArbitrary(1, 5);
+  if(aux === attRound-1){
+    player = 0; 
   }
-	return player; 
+  break;   
+      
+    case 4:
+        if(attRound-1 === 3){    
+            roundMax *= 5; 
+            player -= roundMax; 
+        }
+  break; 
+      
+    case 5:
+        alert(switchAttributes(playerCard) + "] [" + switchAttributes(npcCard))
+        atr1 = switchAttributes(playerCard);     
+        atr2 = switchAttributes(npcCard); 
+
+        if(atr1[0] > atr2[0]){
+            cont = cont + 1;
+        }
+
+        if(atr1[1] > atr2[1]){
+            cont = cont + 1;
+        }
+
+        if(atr1[2] > atr2[2]){
+            cont = cont + 1; 
+        }
+
+        if(atr1[3] > atr2[3]){
+            cont = cont + 1; 
+        }
+
+        if(cont > 2){
+            player = 101; 
+        }
+
+        return player;
+  break; 
+      
+  case 6:
+  aux = getRandomArbitrary(1, 5);
+
+  if(aux === attRound-1){
+     player = player * 2; 
+     div = getRandomArbitrary(1,5); 
+     player = player/div;   
+  }
+
+  break; 
+  }
 }
 
 function switchAttributes(id){
@@ -338,8 +357,14 @@ function competition(n){
   var npcCard = choiceNPC();
   var npc = switchAttributes(npcCard)[attRound-1];
 
-  player = switchEffects(playerCard,npcCard,attRound-1,player,roundMax);
-	
+    if(playerCard === 5){
+        player = switchEffects(playerCard,npcCard,attRound,player,roundMax);
+    }
+    else{
+        switchEffects(playerCard,npcCard,attRound,player,roundMax);
+    }
+
+
     if(player > npc){
         playerWins = playerWins + 1;
     }
@@ -552,7 +577,7 @@ function switchInfo(key){
 
     case 5:
     //popup
-    message = "If “The Optimazer” overcome the atributes of the enemy card in more than a half of they, she wins the duel. \n\nCL: 80\nLAB: 90\nREP: 80\nENE: 70";
+    message = "If she overcome the atributes of the enemy card in more than a half of they, she wins the duel. \n\nCL: 80\nLAB: 90\nREP: 80\nENE: 70";
     break; 
 
     case 6:
@@ -703,28 +728,28 @@ function renderDeck(){
 }
 
 function load(){
-  swal({
-    title: "The Fuse",
-    text: "Both players starts the game with 500 health points.\n" +
-    "In every turn both players receive 2 characters cards. \n" +
-    "In every turn one of the 4 attributes of the characters\n" +
-    "are sorted to be the attribute of the duel in this turn.\n\n" +
-    "The turn's attribute is the black one.\n" +
-    "\nAll character cards have a speciall effect. \n" +
-    "After the effects are called, the calculation between\n" +
-    "the characters sorted attribute.\n" +
-    "The winner of the turn is who have the biggest attribute value.\n" +
-    "The damage calculation in the end of the turn is the value of\n" +
-    "the winner value subtracted by the loser value.\n" +
-    "This game have not card discards, so you can have the sam\n" +
-    "card in your hand more than a time in a row.\n" +
-    "The game ends when a player health points gets 0 or lower,\n" +
-    "or when it cames to the 13 turn. In this case, wins\n" +
-    "who have more hp.\n" +
-    "Ties can happens.",
-    button: "Ready",
-    className: "info-start"
-  });
+//   "swal({
+//     title: "The Fuse",
+//     text: "Both players starts the game with 500 health points.\n" +
+//     "In every turn both players receive 2 characters cards. \n" +
+//     "In every turn one of the 4 attributes of the characters\n" +
+//     "are sorted to be the attribute of the duel in this turn.\n\n" +
+//     "The turn's attribute is the black one.\n" +
+//     "\nAll character cards have a speciall effect. \n" +
+//     "After the effects are called, the calculation between\n" +
+//     "the characters sorted attribute.\n" +
+//     "The winner of the turn is who have the biggest attribute value.\n" +
+//     "The damage calculation in the end of the turn is the value of\n" +
+//     "the winner value subtracted by the loser value.\n" +
+//     "This game have not card discards, so you can have the sam\n" +
+//     "card in your hand more than a time in a row.\n" +
+//     "The game ends when a player health points gets 0 or lower,\n" +
+//     "or when it cames to the 13 turn. In this case, wins\n" +
+//     "who have more hp.\n" +
+//     "Ties can happens.",
+//     button: "Ready",
+//     className: "info-start"
+//   });"
 
 	deck = getDeck();
 	shuffle();
