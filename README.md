@@ -26,6 +26,7 @@ Esse procedimento iniciará o jogo com efeitos de personagem.
 # Próximos Passos:
 - [x] Implementar o código do player
 - [x] Criar novas páginas
-- [ ] Criar efeitos
+- [x] Criar efeitos
 - [x] Aplicar CSS
+- [ ] Criar animação de luta
 - [ ] Finalizar design das cartas

@@ -180,73 +180,295 @@ function switchName(id){
   return v;
 }
 
-function switchEffects(playerCard,npcCard,attRound,player,roundMax){
+function switchEffects(playerCard,npcCard,attRound,player,roundMax,hpPlayer,hpNPC){
     let aux;
     let div;
     let cont = 0;     
     let atr1;     
     let atr2;
 
-  switch(playerCard){
-    //case 1:
-  //let aux = getRandomArbitrary(1,5);     
-  //if(aux === attRound-1){
-  //let atr1 = switchAttributes(idNpc); 
-  //atr1[aux] = 0;
-  //}    
-    case 2:
-       aux = getRandomArbitrary(1, 5);
-  if(aux === attRound-1){
-    player = 0; 
-  }
-  break;   
-      
-    case 4:
-        if(attRound-1 === 3){    
-            roundMax *= 5; 
-            player -= roundMax; 
-        }
-  break; 
-      
-    case 5:
-        alert(switchAttributes(playerCard) + "] [" + switchAttributes(npcCard))
-        atr1 = switchAttributes(playerCard);     
-        atr2 = switchAttributes(npcCard); 
+    switch(playerCard){
+        // The Mother
+        case 1:
+            if(attRound === 2){
+                return 1000; 
+            } 
 
-        if(atr1[0] > atr2[0]){
-            cont = cont + 1;
-        }
+            return player;
+        break;  
+        // The Noise
+        case 2:
+            aux = getRandomArbitrary(1, 5);
+            if(aux === attRound){
+                return 0; 
+            }
 
-        if(atr1[1] > atr2[1]){
-            cont = cont + 1;
-        }
+            return player;
+        break;   
+        // The Surfer
+        case 3:
+            atr2 = switchAttributes(npcCard);  
+            if(attRound === 3){
+                if((atr2[2] - player)> 70){
+                    return atr2[2]; 
+                }
+            }
+            
+            return player;
+        break;
+        // The Dancer
+        case 4:
+            if(attRound === 3){    
+                aux = roundMax * 5; 
+                return player - aux; 
+            }
 
-        if(atr1[2] > atr2[2]){
-            cont = cont + 1; 
-        }
+            return player;
 
-        if(atr1[3] > atr2[3]){
-            cont = cont + 1; 
-        }
+        break; 
+        // The Optimizer
+        case 5:
+            atr1 = switchAttributes(playerCard);     
+            atr2 = switchAttributes(npcCard); 
 
-        if(cont > 2){
-            player = 101; 
-        }
+            if(atr1[0] > atr2[0]){
+                cont = cont + 1;
+            }
 
-        return player;
-  break; 
-      
-  case 6:
-  aux = getRandomArbitrary(1, 5);
+            if(atr1[1] > atr2[1]){
+                cont = cont + 1;
+            }
 
-  if(aux === attRound-1){
-     player = player * 2; 
-     div = getRandomArbitrary(1,5); 
-     player = player/div;   
-  }
+            if(atr1[2] > atr2[2]){
+                cont = cont + 1; 
+            }
 
-  break; 
-  }
+            if(atr1[3] > atr2[3]){
+                cont = cont + 1; 
+            }
+
+            if(cont > 2){
+                player = 101; 
+            }
+
+            return player;
+        break; 
+        // The Rookie
+        case 6:
+            aux = getRandomArbitrary(1, 5);
+            if(aux === attRound){
+                div = getRandomArbitrary(1,5); 
+                return (player * 2)/div;
+            }
+
+            return player;
+        break; 
+        // The Transformer
+        case 8: 
+            if(attRound === 4){
+                if(roundMax%2 === 0){
+                    return player + (5 * roundMax); 
+                }
+                
+                return  player + (5 * (roundMax - 1));
+            }
+
+            return player;
+        break; 
+        // The Intruder
+        case 9:
+            aux = getRandomArbitrary(1,5); 
+
+            if(aux === attRound){
+                return 0; 
+            }
+
+            return player + 40; 
+        break; 
+        //The Oracle
+        case 10:
+            return player; 
+        break; 
+        //The Boss
+        case 13:
+            aux = getRandomArbitrary(1,5); 
+
+            if(aux === attRound){
+                return player * 2; 
+            }
+
+            return player;
+        break; 
+        // The Aunt
+        case 14:
+            if(hpPlayer < 200){
+                return 100; 
+            }
+
+            return player;
+        break; 
+        // The Ruler
+        case 17:
+            atr2 = switchAttributes(npcCard); 
+
+            if(atr2[0] + atr2[1] + atr2[2] + atr2[3] < 261){
+                return player; 
+            }
+
+            return player;
+        break; 
+        // The Virtual Machine
+        case 18:
+            atr1 = switchAttributes(playerCard);
+            aux = getRandomArbitrary(1,5); 
+            div = aux;
+
+            while(div === aux){
+                div = getRandomArbitrary(1,5);
+            }
+
+            if(aux === attRound || div === attRound){
+                if(atr1[aux - 1] > atr1[div - 1]){
+                    return atr1[aux - 1] - atr1[div - 1];
+                }
+
+                return atr1[div - 1] - atr1[aux - 1];
+            }
+
+            return player;
+        break; 
+        // The Silk Touch
+        case 19:
+            if(roundMax % 2 !== 0){
+                aux = getRandomArbitrary(1,5);
+                div = aux;
+
+                while(div === aux){
+                    div = getRandomArbitrary(1,5);
+                }
+
+                if(aux === attRound || div === attRound){
+                    return player * 2; 
+                }
+            }
+
+            return player;
+        break; 
+        // The Preppy
+        case 20:
+            aux = getRandomArbitrary(0,2);
+
+            if(aux === 0){
+                if(attRound === 3){
+                    return player - 5;
+                } 
+
+                if(attRound === 2){
+                    return player + 10;
+                }
+            }
+
+            return player;
+        break; 
+        // The Runaway
+        case 21:
+            if(attRound === 3){
+                return player * 2; 
+            }
+            return player;
+        break; 
+        // The Siren
+        case 22:
+            if(roundMax > 4){
+                if(attRound === 1 || attRound === 2){
+                    return player * 3;
+                }
+            }
+
+            return player;
+        break; 
+        // The Guardian
+        case 23:
+            aux = getRandomArbitrary(0,2);
+
+            if(aux === 0){
+                return player * 2; 
+            }
+
+            return player;
+        break;
+
+        default:
+            return player;
+        break;
+    }
+
+}
+
+function switchHpEffects(card,yourHP,otherHP){
+    let aux; 
+    let div; 
+    let atr1;
+
+    const changePlayer = document.querySelector("#player");
+    const changeNPC = document.querySelector("#npc");
+
+    switch(card){
+        //The Whisper
+        case 7:
+            aux = getRandomArbitrary(1,5); 
+
+            atr1 = switchAttributes(card); 
+            yourHP = yourHP + atr1[aux - 1]; 
+            if(yourHP > 500){
+                yourHP = 500;
+            }
+
+            changePlayer.innerHTML = "Player hp: " + yourHP; 
+            return yourHP;
+        break; 
+        // The Witcher
+        case 11:
+            aux = getRandomArbitrary(1,5); 
+
+            atr1 = switchAttributes(card); 
+            otherHP = otherHP - atr1[aux - 1]; 
+            alert(otherHP);
+
+            changeNPC.innerHTML = "NPC hp: " + otherHP;
+            return otherHP;
+        break; 
+        // The Hunter  
+        case 12:
+            aux = getRandomArbitrary(1,101); 
+            
+            otherHP = otherHP - aux; 
+            changeNPC.innerHTML = "NPC hp: " + otherHP;
+            
+            div = getRandomArbitrary(1,151); 
+
+            yourHP = yourHP - div; 
+            changePlayer.innerHTML = "Player hp: " + yourHP;
+
+            return [yourHP, otherHP];
+        break; 
+        // The Poisson
+        case 15:
+            if((otherHP - yourHP) > 100){
+                otherHP = otherHP - 50; 
+
+                changeNPC.innerHTML = "Player hp: " + otherHP;
+            }
+
+            return otherHP;
+        break; 
+
+        default:
+            return otherHP;
+        break;
+    }
+
+    return otherHP;
 }
 
 function switchAttributes(id){
@@ -351,19 +573,51 @@ function switchAttributes(id){
   return v;
 }
 
-function competition(n){
-  var playerCard = deck[n];
-  var player = switchAttributes(playerCard)[attRound-1];
-  var npcCard = choiceNPC();
-  var npc = switchAttributes(npcCard)[attRound-1];
+function putEffects(playerCard,npcCard,attRound,player,npc,roundMax,hpPlayer,hpNPC){
+    // Player 
+    player = switchEffects(playerCard,npcCard,attRound,player,roundMax,hpPlayer,hpNPC);
 
-    if(playerCard === 5){
-        player = switchEffects(playerCard,npcCard,attRound,player,roundMax);
+    if(playerCard === 7){
+        hpPlayer = switchHpEffects(playerCard,hpPlayer,hpNPC); 
+    }
+    else if(playerCard == 12){
+        tup = switchHpEffects(playerCard,hpPlayer,hpNPC);
+
+        hpPlayer = tup[0];
+        hpNPC = tup[1];
     }
     else{
-        switchEffects(playerCard,npcCard,attRound,player,roundMax);
+        hpNPC = switchHpEffects(playerCard,hpPlayer,hpNPC); 
     }
 
+    // NPC 
+    if(npcCard === 7){
+        hpNPC = switchHpEffects(npcCard,hpNPC,hpPlayer); 
+    }
+    else if(npcCard == 12){
+        tup = switchHpEffects(npcCard,hpNPC,hpPlayer);
+
+        hpNPC = tup[0];
+        hpPlayer = tup[1];
+    }
+    else{
+        hpPlayer = switchHpEffects(npcCard,hpNPC,hpPlayer); 
+    }
+}
+
+function competition(n){
+    var playerCard = deck[n];
+    var player = switchAttributes(playerCard)[attRound-1];
+    var npcCard = choiceNPC();
+    var npc = switchAttributes(npcCard)[attRound-1];
+
+    // Aplica efeitos
+    putEffects(playerCard,npcCard,attRound,player,npc,roundMax,hpPlayer,hpNPC);
+
+    // Se for The Oracle precisa passar de 1000 pra 100
+    if(playerCard === 10 || playerCard === 17){
+        npc = 0;
+    }
 
     if(player > npc){
         playerWins = playerWins + 1;
@@ -376,23 +630,23 @@ function competition(n){
     printRound(roundMax, playerCard, player, npcCard, npc);
     roundMax = roundMax + 1;
 
-  if(roundMax > 14){
-    if(player === npc){
+    if(roundMax > 14){
+        if(player === npc){
+            changeColor(attRound, 1);
+            shuffle();
+        }
+        else if(playerWins > NPCWins){
+            sleep(5000);
+            window.location.href = "victory.html"
+        }
+        else{
+            sleep(5000);
+            window.location.href = "defeat.html";
+        }
+    } else{
         changeColor(attRound, 1);
         shuffle();
     }
-    else if(playerWins > NPCWins){
-        sleep(5000);
-        window.location.href = "victory.html"
-    }
-    else{
-        sleep(5000);
-        window.location.href = "defeat.html";
-    }
-  } else{
-    changeColor(attRound, 1);
-    shuffle();
-  }
 }
 
 function changeColor(attRound, type){
@@ -422,21 +676,23 @@ function changeColor(attRound, type){
   }
 }
 
-function outputLog(text){
-    var fso = new ActiveXObject("Scripting.FileSystemObject");
-    var out = fso.CreateTextFile("output.txt", true); 
-    out.WriteLine(text);
-
-    out.Close(); 
-}
-
 function murder(player, npc){
     if(player > npc){
+        if((player - npc) >= 100){
+            player = 100; 
+            npc = 0;
+        }
+
         hpNPC = hpNPC - (player - npc);
         const changeNPC = document.querySelector("#npc");
-        changeNPC.innerHTML = "Player hp: " + hpNPC;
+        changeNPC.innerHTML = "NPC hp: " + hpNPC;
     }
     else if(npc > player){
+        if((npc - player) >= 100){
+            npc = 100; 
+            player = 0; 
+        }
+        
         hpPlayer = hpPlayer - (npc - player);
         const changePlayer = document.querySelector("#player");
         changePlayer.innerHTML = "Player hp: " + hpPlayer;
@@ -449,7 +705,7 @@ function murder(player, npc){
     if(hpNPC === 0){
         sleep(5000);
         window.location.href = "victory.html"
-        }
+    }
     
 }
 
@@ -557,7 +813,7 @@ function switchInfo(key){
     switch(key){
     case 1: 
     //popup
-    message = "Turn a random enemy attribute into zero.\n\nCL: 65\nLAB: 20\nREP: 100\nENE: 85";
+    message = "Cant lose a lab battle.She dont even need to use a lab bro.\n\nCL: 65\nLAB: 20\nREP: 100\nENE: 85";
     break; 
 
     case 2:
@@ -567,7 +823,7 @@ function switchInfo(key){
 
     case 3:
     //popup
-    message = "Have 50% of run chance. No damage if this happens.\n\nCL: 40\nLAB: 60\nREP: 15\nENE: 90";
+    message = "If the enemy have more than 70 reputations points higher than this card, tie the duel.\n\nCL: 40\nLAB: 60\nREP: 15\nENE: 90";
     break; 
 
     case 4:
@@ -622,12 +878,12 @@ function switchInfo(key){
 
     case 14:
     //popup
-    message = "If the player have less than 300 hp points, all atributes of this card became 100.\n\nCL: 60\nLAB: 70\nREP: 95\nENE: 85";
+    message = "If the player have less than 200 hp points, all atributes of this card became 100.\n\nCL: 60\nLAB: 70\nREP: 95\nENE: 85";
     break; 
 
     case 15:	
     //popup
-    message = "Peculiaridade:If enemy has more than 100 health points more than you, he takes 50 points of damage.\n\nCL: 80\nLAB: 35\nREP: 65\nENE: 80";
+    message = "If enemy has more than 100 health points more than you, he takes 50 points of damage.\n\nCL: 80\nLAB: 35\nREP: 65\nENE: 80";
     break; 
 
     case 16:
@@ -637,22 +893,22 @@ function switchInfo(key){
 
     case 17:
     //popup
-    message = "If the sun of your enemy all atributes is less than260, he do not have autorithy to fight “The Ruler”.Automatic win and 50 damage to your enemy.\n\nCL: 45\nLAB: 35\nREP: 75\nENE: 90";
+    message = "If the sun of your enemy all atributes is less than 260, he do not have autorithy to fight “The Ruler”.Automatic win and 50 damage to your enemy.\n\nCL: 45\nLAB: 35\nREP: 75\nENE: 90";
     break; 
 
     case 18:
     //popup
-    message = "Two of this card attributes get increased by each other randomly.\n\nCL: 85\nLAB: 70\nREP: 75\nENE: 75";
+    message = "Two of this card attributes get decreased by each other randomly.\n\nCL: 85\nLAB: 70\nREP: 75\nENE: 75";
     break; 
 
     case 19:
     //popup
-    message = "If thats a odd turn, double two random atributes.\n\nCL: 40\nLAB: 70\nREP: 60\nENE: 50";
+    message = "If thats a odd turn, triple two random atributes.\n\nCL: 40\nLAB: 70\nREP: 60\nENE: 50";
     break; 
 
     case 20:
     //popup
-    message = "This card can randomly, decrease 5 points of reputation, in exchange it increase 10 points in Lab.\n\nCL: 75\nLAB: 70\nREP: 65";
+    message = "This card will have -20 points in a reputation duel, in exchange it increase 30 points in Lab.\n\nCL: 75\nLAB: 70\nREP: 65\nENE: 85";
     break; 
 
     case 21:
@@ -662,7 +918,7 @@ function switchInfo(key){
 
     case 22:
     //popup
-    message = "If the turn is less than 5 this card atributes triplicate.\n\nCL: 100\nLAB: 60\nREP: 80\nENE: 70";
+    message = "If the turn is more than 4, coffe lover and lab atributtes will triplicate.\n\nCL: 100\nLAB: 60\nREP: 80\nENE: 70";
     break; 
 
     case 23:
@@ -722,8 +978,9 @@ function renderDeck(){
   // second card out 
 
   // returns round attribute
-  attRound = getRandomArbitrary(1, 5);
-  
+ // attRound = getRandomArbitrary(1, 5);
+   attRound = 1;
+
   changeColor(attRound, 0);
 }
 
