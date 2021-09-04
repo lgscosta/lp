@@ -630,19 +630,14 @@ function competition(n){
     printRound(roundMax, playerCard, player, npcCard, npc);
     roundMax = roundMax + 1;
 
-    if(roundMax > 14){
-        if(player === npc){
-            changeColor(attRound, 1);
-            shuffle();
-        }
-        else if(playerWins > NPCWins){
-            sleep(5000);
+    if(roundMax > 13){
+        if(playerWins >= NPCWins){
             window.location.href = "victory.html"
         }
         else{
-            sleep(5000);
             window.location.href = "defeat.html";
         }
+        
     } else{
         changeColor(attRound, 1);
         shuffle();
@@ -699,23 +694,12 @@ function murder(player, npc){
     }
 
     if(hpPlayer === 0){
-        sleep(5000);
         window.location.href = "defeat.html"
     }
     if(hpNPC === 0){
-        sleep(5000);
         window.location.href = "victory.html"
     }
-    
 }
-
-function sleep(milliseconds) {
-    const date = Date.now();
-    let currentDate = null;
-    do {
-      currentDate = Date.now();
-    } while (currentDate - date < milliseconds);
-  }
 
 function choiceNPC(){
   let number = getRandomArbitrary(1, 3);
