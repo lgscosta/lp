@@ -637,7 +637,7 @@ function competition(n){
         else{
             window.location.href = "defeat.html";
         }
-        
+
     } else{
         changeColor(attRound, 1);
         shuffle();
@@ -924,21 +924,124 @@ function switchInfo(key){
     });
 }
 
+function switchImage(key){
+    switch(key){
+        case 1:
+            return "mother ";
+        break;
+    
+        case 2:
+            return "noise ";
+        break;
+    
+        case 3:
+            return "surfer ";    
+        break;
+    
+        case 4:
+            return "dancer ";    
+        break;
+        
+        case 5:
+            return "optimizer ";    
+        break;
+    
+        case 6:
+            return "rookie ";    
+        break;
+    
+        case 7:
+            return "whisper ";    
+        break;
+    
+        case 8:
+            return "transformer ";    
+        break;
+    
+        case 9:
+            return "intruder ";    
+        break;
+    
+        case 10:
+            return "oracle ";    
+        break;
+    
+        case 11:
+            return "witcher ";    
+        break;
+    
+        case 12:
+            return "hunter ";    
+        break;
+    
+        case 13:
+            return "boss ";    
+        break;
+    
+        case 14:
+            return "aunt ";    
+        break;
+        
+        case 15:
+            return "poisson ";    
+        break;
+    
+        case 16:
+            return "who ";    
+        break;
+    
+        case 17:
+            return "ruler ";    
+        break;
+    
+        case 18:
+            return "vm ";    
+        break;
+    
+        case 19:
+            return "st ";    
+        break;
+    
+        case 20:
+            return "preppy ";    
+        break;
+    
+        case 21:
+            return "runaway ";    
+        break;
+    
+        case 22:
+            return "siren ";    
+        break;
+    
+        case 23:
+            return "guardian ";    
+        break;
+    
+        default:
+            return "sadboy ";
+        break;
+      }
+}
+
 function renderDeck(){
-	document.getElementById('deck').innerHTML = '';
+    let firstImage = switchImage(deck[0]);
+    let secondImage = switchImage(deck[1]);
+
+    document.getElementById('deck').innerHTML = '';
 
   // first card on 
 		var card = document.createElement("div");
 		var value = document.createElement("div");
-		var suit = document.createElement("div");
+		var first = document.createElement("div");
 		card.className = "card";
 		value.className = "value";
-		suit.className = "suit " + deck[0].Suit;
+		first.className = firstImage + deck[0].Suit;
 
     value.innerHTML = switchName(deck[0]);
 
 		card.appendChild(value);
-		card.appendChild(suit);
+		card.appendChild(first);
 
 		document.getElementById("deck").appendChild(card);
   // first card out 
@@ -946,26 +1049,24 @@ function renderDeck(){
   // second card on 
     var card = document.createElement("div");
     var value = document.createElement("div");
-    var suit = document.createElement("div");
+    var second = document.createElement("div");
     card.className = "card";
     value.className = "value";
-    suit.className = "suit " + deck[1].Suit;
+    second.className = secondImage + deck[1].Suit;
 
     value.innerHTML = switchName(deck[1]);
 
     card.appendChild(value);
-    card.appendChild(suit);
+    card.appendChild(second);
 
-    card.onmouseenter = console.log("aaaa");
-    
     document.getElementById("deck").appendChild(card);
   // second card out 
 
   // returns round attribute
  // attRound = getRandomArbitrary(1, 5);
-   attRound = 1;
+    attRound = 1;
 
-  changeColor(attRound, 0);
+    changeColor(attRound, 0);
 }
 
 function load(){

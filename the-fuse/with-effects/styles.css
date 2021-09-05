@@ -110,12 +110,19 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.card .suit
+/* .card .siren
 {
     background-image: url('The\ Siren.png');
     height: 200px;
     width: 180px;
 }
+
+.card .second
+{
+    background-image: url('The\ Siren.png');
+    height: 200px;
+    width: 180px;
+} */
 
 #fuse
 {
@@ -386,4 +393,175 @@ html
   background: transparent;
   border: none;
   background-size:300px;
+}
+
+
+/* #################### CARDS #################### */
+/* 1 */
+.card .mother
+{
+    background-image: url('The\ Siren.png');
+    height: 200px;
+    width: 160px;
+}
+/* 2 */
+.card .noise
+{
+    background-image: url('img/The\ Noise.jpg');
+    height: 200px;
+    width: 160px;
+}
+/* 3 */
+.card .surfer
+{
+    background-image: url('The\ Siren.png');
+    height: 200px;
+    width: 160px;
+}
+/* 4 */
+.card .dancer
+{
+    background-image: url('The\ Siren.png');
+    height: 200px;
+    width: 160px;
+}
+/* 5 */
+.card .optimizer
+{
+    background-image: url('The\ Siren.png');
+    height: 200px;
+    width: 160px;
+}
+/* 6 */
+.card .rookie
+{
+    background-image: url('The\ Siren.png');
+    height: 200px;
+    width: 160px;
+}
+/* 7 */
+.card .whisper
+{
+    background-image: url('The\ Siren.png');
+    height: 200px;
+    width: 160px;
+}
+/* 8 */
+.card .transformer
+{
+    background-image: url('img/The\ Transformer.jpg');
+    height: 200px;
+    width: 160px;
+}
+/* 9 */
+.card .intruder
+{
+    background-image: url('img/The\ Intruder.jpg');
+    height: 200px;
+    width: 160px;
+}
+/* 10 */
+.card .oracle
+{
+    background-image: url('The\ Siren.png');
+    height: 200px;
+    width: 160px;
+}
+/* 11 */
+.card .witcher
+{
+    background-image: url('The\ Siren.png');
+    height: 200px;
+    width: 160px;
+}
+/* 12 */
+.card .hunter
+{
+    background-image: url('The\ Siren.png');
+    height: 200px;
+    width: 160px;
+}
+/* 13 */
+.card .boss
+{
+    background-image: url('img/The\ Boss.jpg');
+    height: 200px;
+    width: 160px;
+}
+/* 14 */
+.card .aunt
+{
+    background-image: url('The\ Siren.png');
+    height: 200px;
+    width: 160px;
+}
+/* 15 */
+.card .poisson
+{
+    background-image: url('The\ Siren.png');
+    height: 200px;
+    width: 160px;
+}
+/* 16 */
+.card .who
+{
+    background-image: url('The\ Siren.png');
+    height: 200px;
+    width: 160px;
+}
+/* 17 */
+.card .ruler
+{
+    background-image: url('The\ Siren.png');
+    height: 200px;
+    width: 160px;
+}
+/* 18 */
+.card .vm
+{
+    background-image: url('The\ Siren.png');
+    height: 200px;
+    width: 160px;
+}
+/* 19 */
+.card .st
+{
+    background-image: url('The\ Siren.png');
+    height: 200px;
+    width: 160px;
+}
+/* 20 */
+.card .preppy
+{
+    background-image: url('img/The\ Preppy.jpg');
+    height: 200px;
+    width: 160px;
+}
+/* 21 */
+.card .runaway
+{
+    background-image: url('The\ Siren.png');
+    height: 200px;
+    width: 160px;
+}
+/* 22 */
+.card .siren
+{
+    background-image: url('img/The\ Siren.jpg');
+    height: 200px;
+    width: 160px;
+}
+/* 23 */
+.card .guardian
+{
+    background-image: url('img/The\ Guardian.jpg');
+    height: 200px;
+    width: 160px;
+}
+/* 24 */
+.card .sadboy
+{
+    background-image: url('img/The\ Sad\ Boy.jpg');
+    height: 200px;
+    width: 160px;
 }
