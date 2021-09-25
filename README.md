@@ -28,5 +28,4 @@ Esse procedimento iniciará o jogo com efeitos de personagem.
 - [x] Criar novas páginas
 - [x] Criar efeitos
 - [x] Aplicar CSS
-- [ ] Criar animação de luta
 - [ ] Finalizar design das cartas
