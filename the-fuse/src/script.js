@@ -191,7 +191,7 @@ function switchEffects(playerCard,npcCard,attRound,player,roundMax,hpPlayer,hpNP
         // The Mother
         case 1:
             if(attRound === 2){
-                return 1000; 
+                return 101; 
             } 
 
             return player;
@@ -602,6 +602,8 @@ function putEffects(playerCard,npcCard,attRound,player,npc,roundMax,hpPlayer,hpN
     else{
         hpPlayer = switchHpEffects(npcCard,hpNPC,hpPlayer); 
     }
+
+    return player;
 }
 
 function competition(n){
@@ -611,7 +613,7 @@ function competition(n){
     var npc = switchAttributes(npcCard)[attRound-1];
 
     // Aplica efeitos
-    putEffects(playerCard,npcCard,attRound,player,npc,roundMax,hpPlayer,hpNPC);
+    player = putEffects(playerCard,npcCard,attRound,player,npc,roundMax,hpPlayer,hpNPC);
 
     // Se for The Oracle precisa passar de 1000 pra 100
     if(playerCard === 10 || playerCard === 17){
@@ -1045,7 +1047,8 @@ function renderDeck(){
   // second card out 
 
   // returns round attribute
-    attRound = getRandomArbitrary(1, 5);
+    // attRound = getRandomArbitrary(1, 5);
+    attRound = 2;
 
     changeColor(attRound, 0);
 }
