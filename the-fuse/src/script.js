@@ -779,17 +779,17 @@ function switchInfo(key){
     switch(key){
     case 1: 
     //popup
-    message = "Cant lose a lab battle.She dont even need to use a lab bro.\n\nCL: 65\nLAB: 20\nREP: 100\nENE: 85";
+    message = "Can't lose a lab battle. She dont even need to use a lab, bro.\n\nCL: 65\nLAB: 20\nREP: 100\nENE: 85";
     break; 
 
     case 2:
     //popup
-    message = "Turn one of your attributes into zero.\n\nCL: 50\nLAB: 60\nREP: 10\nENE: 45";
+    message = "Turn one of his attributes into zero.\n\nCL: 50\nLAB: 60\nREP: 10\nENE: 45";
     break; 
 
     case 3:
     //popup
-    message = "If the enemy have more than 70 reputations points higher than this card, tie the duel.\n\nCL: 40\nLAB: 60\nREP: 15\nENE: 90";
+    message = "If the enemy have more than 70 reputation points higher than him, it's a tie.\n\nCL: 40\nLAB: 60\nREP: 15\nENE: 90";
     break; 
 
     case 4:
@@ -799,17 +799,17 @@ function switchInfo(key){
 
     case 5:
     //popup
-    message = "If she overcome the atributes of the enemy card in more than a half of they, she wins the duel. \n\nCL: 80\nLAB: 90\nREP: 80\nENE: 70";
+    message = "If she overcome the attributes of the enemy card in more than half, she wins the duel. \n\nCL: 80\nLAB: 90\nREP: 80\nENE: 70";
     break; 
 
     case 6:
     //popup
-    message = "Double a random atribute, but after, divide by a random number into 1 and 4.\n\nCL: 50\nLAB: 100\nREP: 70\nENE: 80";
+    message = "Double a random attribute, but then, divide by a random number into 1 and 4.\n\nCL: 50\nLAB: 100\nREP: 70\nENE: 80";
     break; 
 
     case 7:
     //popup
-    message = "Heals the player health point in the value of one random atribute.\n\nCL: 60\nLAB: 80\nREP: 90\nENE: 45";
+    message = "Heals the player health point in the value of one random attribute.\n\nCL: 60\nLAB: 80\nREP: 90\nENE: 45";
     break; 
 
     case 8:
@@ -819,47 +819,47 @@ function switchInfo(key){
 
     case 9:
     //popup
-    message = "Turn one of his atributes into 0 and increases 40 points to the others atributes.\n\nCL: 80\nLAB: 70\nREP: 70\nENE: 40";
+    message = "Turn one of his attributes into 0 and increases 40 points to the others attributes.\n\nCL: 80\nLAB: 70\nREP: 70\nENE: 40";
     break; 
 
     case 10:
     //popup
-    message = "Actually,the Oracle cannot be beaten in battle because we didnt used python on our code. Automatic win and 100 damage to enemy.\n\nCL: 60\nLAB: 95\nREP: 100\nENE: 70";
+    message = "Actually, the Oracle can't be beaten in battle because we didn't use python in our code. Automatic win and 100 damage points to NPC.\n\nCL: 60\nLAB: 95\nREP: 100\nENE: 70";
     break; 
 
     case 11:
     //popup
-    message = "Enemy take damage in the value of one random atribute before the duel. If he wins the turn, the damage calculation happens normally.\n\nCL: 85\nLAB: 75\nREP: 100\nENE: 65";
+    message = "Enemy take damage in the value of one random attribute before the duel. If he wins the turn, the damage calculation happens normally.\n\nCL: 85\nLAB: 75\nREP: 100\nENE: 65";
     break; 
 
     case 12:
     //popup
-    message = "Enemy takes 0-100 gamage before duel and you takes 0-150 damage.\n\nCL: 60\nLAB: 30\nREP: 30\nENE: 70";
+    message = "Enemy takes 0-100 damage before duel and you takes 0-150 damage.\n\nCL: 60\nLAB: 30\nREP: 30\nENE: 70";
     break; 
 
     case 13:
     //popup
-    message = "thanks to your authority, double a random atribute.\n\nCL: 75\nLAB: 70\nREP: 50\nENE: 40";
+    message = "Thanks to his authority, double a random attribute.\n\nCL: 75\nLAB: 70\nREP: 50\nENE: 40";
     break; 
 
     case 14:
     //popup
-    message = "If the player have less than 200 hp points, all atributes of this card became 100.\n\nCL: 60\nLAB: 70\nREP: 95\nENE: 85";
+    message = "If the player have less than 200 hp, all attributes of this card became 100.\n\nCL: 60\nLAB: 70\nREP: 95\nENE: 85";
     break; 
 
     case 15:	
     //popup
-    message = "If enemy has more than 100 health points more than you, he takes 50 points of damage.\n\nCL: 80\nLAB: 35\nREP: 65\nENE: 80";
+    message = "If enemy has more than 100 health points over you, he takes 50 points of damage.\n\nCL: 80\nLAB: 35\nREP: 65\nENE: 80";
     break; 
 
     case 16:
     //popup
-    message = "Actually we dont know nothing about that guy.\n\nCL: 50\nLAB: 50\nREP: 50\nENE: 50";
+    message = "Actually we don't know nothing about this guy.\n\nCL: 50\nLAB: 50\nREP: 50\nENE: 50";
     break; 
 
     case 17:
     //popup
-    message = "If the sun of your enemy all atributes is less than 260, he do not have autorithy to fight “The Ruler”.Automatic win and 50 damage to your enemy.\n\nCL: 45\nLAB: 35\nREP: 75\nENE: 90";
+    message = "If the sum of all attributes of your enemy is less than 260, he don't have autorithy to fight “The Ruler”.Automatic win and 50 damage to your enemy.\n\nCL: 45\nLAB: 35\nREP: 75\nENE: 90";
     break; 
 
     case 18:
@@ -869,12 +869,12 @@ function switchInfo(key){
 
     case 19:
     //popup
-    message = "If thats a odd turn, triple two random atributes.\n\nCL: 40\nLAB: 70\nREP: 60\nENE: 50";
+    message = "If that's an odd turn, triple two random attributes.\n\nCL: 40\nLAB: 70\nREP: 60\nENE: 50";
     break; 
 
     case 20:
     //popup
-    message = "This card will have -20 points in a reputation duel, in exchange it increase 30 points in Lab.\n\nCL: 75\nLAB: 70\nREP: 65\nENE: 85";
+    message = "This card will have -20 points in a reputation duel, in exchange of increasing 30 points in Lab.\n\nCL: 75\nLAB: 70\nREP: 65\nENE: 85";
     break; 
 
     case 21:
@@ -884,17 +884,17 @@ function switchInfo(key){
 
     case 22:
     //popup
-    message = "If the turn is more than 4, coffe lover and lab atributtes will triplicate.\n\nCL: 100\nLAB: 60\nREP: 80\nENE: 70";
+    message = "If the turn is more than 4, Coffe Lover and Lab attributtes will triplicate.\n\nCL: 100\nLAB: 60\nREP: 80\nENE: 70";
     break; 
 
     case 23:
     //popup
-    message = "Have 50% of chance to double the duel choiced atribute.\n\nCL: 70\nLAB: 95\nREP: 65\nENE: 80";
+    message = "Have 50% of chance to double the duel chosen attribute.\n\nCL: 70\nLAB: 95\nREP: 65\nENE: 80";
     break; 
 
     case 24: 
     //popup
-    message = "He is just sad.\n\nCL: 70\nLAB: 70\nREP: 90\nENE: 50"
+    message = "He's just sad.\n\nCL: 70\nLAB: 70\nREP: 90\nENE: 50"
     break;
     }
 
@@ -1053,23 +1053,19 @@ function renderDeck(){
 function load(){
   swal({
     title: "The Fuse",
-    text: "Both players starts the game with 500 health points.\n" +
-    "In every turn both players receive 2 characters cards. \n" +
-    "In every turn one of the 4 attributes of the characters\n" +
-    "are sorted to be the attribute of the duel in this turn.\n\n" +
-    "The turn's attribute is the black one.\n" +
-    "\nAll character cards have a speciall effect. \n" +
-    "After the effects are called, the calculation between\n" +
-    "the characters sorted attribute.\n" +
-    "The winner of the turn is who have the biggest attribute value.\n" +
-    "The damage calculation in the end of the turn is the value of\n" +
-    "the winner value subtracted by the loser value.\n" +
-    "This game have not card discards, so you can have the sam\n" +
-    "card in your hand more than a time in a row.\n" +
-    "The game ends when a player health points gets 0 or lower,\n" +
-    "or when it cames to the 13 turn. In this case, wins\n" +
-    "who have more hp.\n" +
-    "Ties can happens.",
+    text: "Player vs Bot\n" + "The player start the game with 500 health points.\n" +
+    "In every turn the player receive 2 characters cards, so does the NPC. \n" +
+    "One of the 4 attributes of the characters will be sorted in each turn.\n" +
+    "The chosen attribute will be black.\n\n" +
+    "\nAll character cards have a special effect that will affect\n" +
+    "the result of the current round.\n" +
+    "If there's no effect the winner will be the\n" +
+    "one with the biggest attribute value.\n\n" +
+    "The health damage calculation is the value of\n" +
+    "the winner attribute subtracted by the loser attribute.\n" +
+    "The game ends when a player health points gets 0,\n" +
+    "or when it cames to the 13th turn. In this case, the winner\n" +
+    "is who won the most rounds.\n",
     button: "Ready",
     className: "info-start"
   });

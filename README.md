@@ -15,11 +15,11 @@ O programa está sendo testado dentro do caminho:
 Quando for executada em outra máquina, rodar o arquivo"
 > index.html
 
-Esse procedimento iniciará o jogo sem efeitos de personagem.
+Esse procedimento iniciará o jogo sem efeitos de personagem. [versão deletada]
 
 # Código Completo
 O código principal está sendo desenvolvido no diretório:
->/the-fuse/with-effects
+>/the-fuse/src
 
 Esse procedimento iniciará o jogo com efeitos de personagem.
 
@@ -28,4 +28,5 @@ Esse procedimento iniciará o jogo com efeitos de personagem.
 - [x] Criar novas páginas
 - [x] Criar efeitos
 - [x] Aplicar CSS
-- [ ] Finalizar design das cartas
+- [x] Finalizar design das cartas
+- [x] Redigir textos
