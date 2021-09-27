@@ -9,7 +9,6 @@
     border-radius:10px;
     text-align: center;
     color:white;
-    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
     font-family: "Copperplate",fantasy;
 }
 
@@ -106,23 +105,8 @@
 
 .card .value{
     font-size:14pt;
-    /* font-family: sans-serif; */
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-
-/* .card .siren
-{
-    background-image: url('The\ Siren.png');
-    height: 200px;
-    width: 180px;
-}
-
-.card .second
-{
-    background-image: url('The\ Siren.png');
-    height: 200px;
-    width: 180px;
-} */
 
 #fuse
 {
@@ -199,7 +183,6 @@ html
     border-radius:10px;
     text-align: center;
     color:white;
-    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
     font-family: "Copperplate",fantasy;
 }
 
@@ -213,7 +196,6 @@ html
     border-radius:10px;
     text-align: center;
     color:white;
-    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
     font-family: "Copperplate",fantasy;
 }
 
@@ -382,14 +364,12 @@ html
     border-radius:10px;
     text-align: center;
     color:rgba(0, 0, 0, 0.438);
-    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
     font-family: "Copperplate",fantasy;
 }
 
 .odara #button
 {
   background-image: "../img/items/odara.png";
-  /* background-size: 300px 300px; */
   background: transparent;
   border: none;
   background-size:300px;
