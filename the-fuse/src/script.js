@@ -372,11 +372,11 @@ function switchEffects(playerCard,npcCard,attRound,player,roundMax,hpPlayer,hpNP
 
             if(aux === 0){ // Se "sim"
                 if(attRound === 3){ // Se o atributo for Reputação
-                    return player - 5; // Perde cinco pontos
+                    return player - 20; // Perde cinco pontos
                 } 
 
                 if(attRound === 2){ // Se o atributo for Lab User
-                    return player + 10; // Sobe 10 pontos
+                    return player + 30; // Sobe 10 pontos
                 }
             }
 
